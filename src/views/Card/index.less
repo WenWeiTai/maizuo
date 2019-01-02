@@ -1,0 +1,29 @@
+body {
+  background: #fff;
+}
+.price-block {
+  padding: 10px 15px;
+  background-color: #fff;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+  box-sizing: border-box;
+  .am-button-primary {
+    line-height: 45px;
+    width: 100%;
+    background-color: #ff9e05;
+    border-radius: 4px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    border: 0;
+  }
+}
+html:not([data-scale]) .am-button-primary::before  {
+  border: 1px solid #ff9e05;
+}
+
+.card-item {
+  padding: 10px 15px;
+}
