@@ -2,6 +2,8 @@ import React from 'react';
 
 import './styles/base.less';
 
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+
 class App extends React.Component {
   constructor () {
     super ()
@@ -9,7 +11,11 @@ class App extends React.Component {
 
   render () {
     return (
-      <div>主页</div>
+      <div>
+        主页
+
+      </div>
+
     )
   }
 }
