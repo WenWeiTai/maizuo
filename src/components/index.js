@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 
 import LyjHeadBar from './HeadBar';
@@ -14,3 +15,5 @@ class HeadBar extends React.Component {
   }
 }
 export default HeadBar;
+=======
+>>>>>>> f2008605593340777570f1a71c28ec0bdfefa7c7
