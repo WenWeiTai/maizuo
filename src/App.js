@@ -4,7 +4,6 @@ import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import './styles/base.less';
 import LyjHome from './views/Home/HomeFilms';
 
-
 class App extends React.Component {
 
   render () {
