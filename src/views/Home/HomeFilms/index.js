@@ -28,6 +28,18 @@ class LyjHome extends React.Component{
                     <i className="iconfont">*</i>
                 </div>
             </div>
+
+            <div className="lyj-cityList">
+            <div>
+              <img src="" alt="" />
+              <div>
+                <ul>
+                  <h2>大黄蜂</h2>
+                </ul>
+              </div>
+
+            </div>
+            </div>
         </div>
         <LyjFootBar></LyjFootBar>
       </Fragment>
