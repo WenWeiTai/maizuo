@@ -1,15 +1,20 @@
 import React from 'react';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+
+import Zk_Deraul from './views/Detail';
 
 import './styles/base.less';
 
 class App extends React.Component {
-  constructor () {
-    super ()
-  }
-
   render () {
     return (
-      <div>主页</div>
+      <div>
+      <Router>
+        <Switch>
+          <Route path="/detail" component={Zk_Deraul}></Route>
+        </Switch>
+      </Router>
+      </div>
     )
   }
 }
