@@ -9,11 +9,7 @@
     "react-dom": "^16.7.0",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
-<<<<<<< HEAD
     "react-scripts": "^2.1.1",
-=======
-    "react-scripts": "2.1.1",
->>>>>>> e78dfc67b653ece729dd656a908c583ce95b932d
     "redux": "^4.0.1"
   },
   "scripts": {
@@ -43,10 +39,6 @@
     "type": "git",
     "url": "git+https://github.com/WenWeiTai/maoyan.git"
   },
-<<<<<<< HEAD
-=======
-  "keywords": [],
->>>>>>> e78dfc67b653ece729dd656a908c583ce95b932d
   "author": "",
   "license": "ISC",
   "bugs": {

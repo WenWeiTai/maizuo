@@ -7,9 +7,6 @@ import './styles/base.less';
 import LyjHome from './views/Home/HomeFilms';
 
 class App extends React.Component {
-  // constructor () {
-  //   super ()
-  // }
 
   render () {
     return (
@@ -17,12 +14,12 @@ class App extends React.Component {
         <Router>
           <Switch>
             <Route path="/movie" component={ LyjHome }></Route>
-            <Route path="/city" component={City}></Route>
-            <Redirect to="/movie"></Redirect>
+            <Route path="/city-list" component={City}></Route>
             <Route path="/detail" component={Zk_Deraul}></Route>
+            <Route path="/front" component={Front}></Route>
+            <Redirect to="/movie"></Redirect>
           </Switch>
         </Router>
-        {/* <Front></Front> */}
       </div>
     )
   }

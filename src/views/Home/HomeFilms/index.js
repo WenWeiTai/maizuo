@@ -5,6 +5,16 @@ import LyjHeadBar from '@/components/HeadBar';
 import LyjFootBar from '@/components/FootBar';
 
 class LyjHome extends React.Component{
+  constructor (props) {
+    super (props)
+    this.state = {
+      tabs: [
+        { id: 'films', name: '电影', href: '/films'},
+        { id: 'cinema', name: '影院', href: '/cinema'},
+        { id: 'center', name: '我的', href: '/center'},
+      ]
+    }
+  }
   render() {
     return (
       <Fragment>
@@ -34,32 +44,34 @@ class LyjHome extends React.Component{
             </div>
 
             <div className="lyj-cityList">
-                <div className='ljy-List'>
-                  <img src={require('@/images/img1.jpg')} alt="" />
-                  <div className='lyj-filmsDetails'>
-                    <ul className='lyj-detailsList'>
-                    <div className="lyj-title">
-                      <h2>大黄蜂</h2>
+                <Link to='/front'>
+                  <div className='ljy-List'>
+                    <img src={require('@/images/img1.jpg')} alt="" />
+                    <div className='lyj-filmsDetails'>
+                      <ul className='lyj-detailsList'>
+                      <div className="lyj-title">
+                        <h2>大黄蜂</h2>
 
-                      <div className="lyj-3dBox">
-                          <div className="lyj3d">3D</div>
-                          <div className="lyjIMAX">IMAX</div>
+                        <div className="lyj-3dBox">
+                            <div className="lyj3d">3D</div>
+                            <div className="lyjIMAX">IMAX</div>
+                        </div>
+                      </div>
+                      <p><span>241534</span>想看</p>
+
+
+                      </ul>
+
+                      <div className='lyj-gouPiao'>
+                        <div>购票</div>
                       </div>
                     </div>
-                    <p><span>241534</span>想看</p>
 
-
-                    </ul>
-
-                    <div className='lyj-gouPiao'>
-                      <div>购票</div>
-                    </div>
                   </div>
-
-                </div>
+                </Link>
             </div>
         </div>
-        <LyjFootBar></LyjFootBar>
+        <LyjFootBar tabs={this.state.tabs}></LyjFootBar>
       </Fragment>
     )
   }
