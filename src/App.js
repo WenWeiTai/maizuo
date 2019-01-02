@@ -5,6 +5,7 @@ import Front from '@/views/DetailFront/index.js'
 import Zk_Deraul from './views/Detail';
 import './styles/base.less';
 import LyjHome from './views/Home/HomeFilms';
+import Center from './views/Center';
 
 class App extends React.Component {
 
@@ -17,6 +18,7 @@ class App extends React.Component {
             <Route path="/city-list" component={City}></Route>
             <Route path="/detail" component={Zk_Deraul}></Route>
             <Route path="/front" component={Front}></Route>
+            <Route path="/center" component={Center}></Route>
             <Redirect to="/movie"></Redirect>
           </Switch>
         </Router>
