@@ -13,7 +13,7 @@ class LyjHome extends React.Component{
             <div className="lyj-cityFilmList">
                 <div className="lyj-xzCity">
                   <span>深圳</span>
-                  <i className="iconfont">*</i>
+                  <i className="iconfont iconfont-arr_D"></i>
 
                 </div>
 
@@ -25,7 +25,7 @@ class LyjHome extends React.Component{
                 </div>
 
                 <div className='lyj-filmsSearch'>
-                    <i className="iconfont">*</i>
+                    <i className="iconfont iconfont-magnifier"></i>
                 </div>
             </div>
         </div>
