@@ -27,3 +27,11 @@
 联系电话：15899850664
 微信号：wenweitai
 都加下我，我拉个微信群，方便沟通
+
+
+## 路由跳转
+主页：localhost:3000/#movie
+主页搜索：localhost:3000/#search:cityId
+城市列表：localhost:3000/#city-list ——（里边有电影和影院两个筛选条件）
+影院页：localhost:3000/cinema
+我的：localhost:3000/myCenter
