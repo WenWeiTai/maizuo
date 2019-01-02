@@ -1,0 +1,320 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.navbar{
+  position: relative;
+  top: 0;
+  z-index: 10;
+  background-color: #e54847 !important;
+  display: -webkit-box;
+  padding: 6px;
+  height: 50px;
+  overflow: hidden;
+  a{
+    position:absolute;
+    width: 20px;
+    background-size: 37%;
+    line-height: 38px;
+    // cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+  }
+  div{
+    width: 100%;
+    text-align: center;
+    line-height: 38px;
+    -webkit-box-flex: 1;
+    color: #FFF;
+    font-size: 18px;
+    text-align: center;
+    line-height: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+  }
+
+}
+.movie-page{
+  // widows: 100%;
+  background: #f4f4f4;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #555;
+  min-width: 105px;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: rgba(255,255,255,0);
+  font: 14px/1.5 Arial,Helvetica,sans-serif;
+  .movie-header{
+    .movie{
+      color: #fff;
+      padding: 15px;
+      line-height: 1;
+      overflow: hidden;
+      position: relative;
+      box-sizing: border-box;
+      filter: blur(0);
+      .movie-background{
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 0;
+        position: absolute;
+        filter: blur(3px);
+        -webkit-filter: blur(3px);
+        background-size: cover;
+        background-image: gray;
+        background-repeat: no-repeat;
+        background-position-y: 40%;
+        background-image: url(http://p1.meituan.net/177.249/movie/a596474….jpg);
+      }
+      .movie-filter{
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        position: absolute;
+        background-color: #40454d;
+        opacity: .55;
+      }
+      .movie-container{
+        position: relative;
+        .zk_logo{
+          float: left;
+          width: 107px;
+          height: 150px;
+          filter: blur(0);
+          font-style: initial;
+          -webkit-filter: blur(0);
+          border: solid 1px #f0f2f3;
+          position: relative;
+          background: #c1c1c1 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAwFBMV…mytghhgpB+Cgix7I1gjStOqq8c5jhkmLqiJ0McuoXq6j92ZWbxiZAstgAAAABJRU5ErkJggg==) no-repeat center center;
+          a{
+            display: block;
+            width: 100%;
+            height: 100%;
+            img{
+              width: 100%;
+              height: 100%;
+            }
+          }
+          ::after{
+            content: "播";
+            color: white;
+            right: 5px;
+            bottom: 5px;
+            font-size: 25px;
+            position: absolute;
+            font-family: "myfont";
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+            border-radius: 100%;
+            opacity: 35px;
+            background: #333;
+          }
+        }
+        .zk_text{
+          z-index: 2;
+          padding-left: 122px;
+          height: 150px;
+          .zk_reactid{
+            font-size: 17px;
+            line-height: 1.2;
+            margin-top: 3px;
+            margin-bottom: 4px;
+          }
+          .zk_movie-ename{
+            font-size: 11px;
+            opacity: 0.8;
+            height: 11px;
+            margin-bottom: 6px;
+          }
+          // 评分
+          .zk_movie-score{
+            color: #ff9900;
+            font-size: 16px;
+            margin-bottom: 6px;
+            .zk_released-score{
+              .zk_rating{
+                display: inline-block;
+                line-height: 1;
+                font-size: 18px;
+                img{
+                  width: 18px;
+                  height: 18px;
+                  margin-left: 3px;
+                  vertical-align: text-top;
+                }
+                img:first-child{
+                  margin: 0;
+                }
+                span{
+                  margin-left: 8px;
+                }
+              }
+              .zk_score-num{
+                color: #fff;
+                opacity: .7;
+                font-size: 9px;
+                margin-top: 4px;
+                margin-bottom: 8px;
+              }
+            }
+          }
+          .zk_movie-category{
+            font-size: 12px;
+            margin-bottom: 6px;
+            span{
+              opacity: .7;
+              vertical-align: middle;
+            }
+          }
+          .zk_movie-content-row{
+            font-size: 12px;
+            opacity: .7;
+            margin-bottom: 6px;
+          }
+        }
+      }
+    }
+  }
+  .zk_section-seperate{
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    margin: 10px 0;
+    background: white;
+    .zk_btn-block{
+      display: block;
+      margin: 5px 15px;
+      padding: 10px;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      display: inline-block;
+      text-align: center;
+      border-radius: 4px;
+      line-height: 1;
+      background: #e54847;
+      color: #fff;
+      text-decoration: none;
+      width: 325px;
+    }
+    .zk_text-expander{
+      cursor: pointer;
+      font-size: 15px;
+      background-color: white;
+      margin: 10px;
+      .zk_text-expander-button{
+        margin: 0;
+        line-height: 20px;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+  }
+  .zk_section-seperate{
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    margin: 10px 0;
+    h3{
+      margin: 0;
+      font-weight: 400;
+      color: #666;
+      font-size: 15px;
+      padding: 10px 15px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    .zk_tip{
+      height: 40px;
+      margin-left: 15px;
+      border-bottom: 1px solid #f1f1f1;
+      img{
+        width: 20px;
+        height: 20px;
+        margin-top: 10px;
+        float: left;
+      }
+      span{
+        display: block;
+        padding-top: 11px;
+        white-space: nowrap;
+        margin-left: 30px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+  .zk_section-seperate{
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    margin: 10px 0;
+    .zk_movie-celebrities{
+      width: 100%;
+      padding: 15px 0 5px 10px;
+      margin: 0;
+      list-style: none;
+      overflow-x: scroll;
+      white-space: nowrap;
+      box-sizing: border-box;
+      display: block;
+      list-style-type: disc;
+      margin-block-start: 1%;
+      margin-block-end: 1%;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      // padding-inline-start: 40px;
+      li{
+        padding: 0 2px;
+        text-align: center;
+        display: inline-block;
+        a{
+          color: black;
+          text-decoration: none;
+            img{
+              width: 65px;
+              height: 90px;
+              margin: 2px;
+            }
+            span{
+              width: 70px;
+              display: block;
+              font-size: 11px;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+            }
+        }
+      }
+    }
+    .zk_movie-stages{
+      padding-left: 15px;
+      margin: 0;
+      overflow-x: scroll;
+      white-space: nowrap;
+      .zk_stage-img-container{
+        list-style: none;
+        display: inline-block;
+        overflow: hidden;
+        width: auto;
+        height: 70px;
+        margin-left: 5px;
+          a{
+            display: block;
+              img{
+                // width: 125px;
+                height: 70px;
+                margin-top: 0;
+              }
+          }
+      }
+    }
+  }
+}
