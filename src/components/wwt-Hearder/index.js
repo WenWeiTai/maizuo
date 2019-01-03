@@ -4,7 +4,7 @@ import './index.less'
 
 class Hearder extends Component {
   constructor (props) {
-    super (props)
+    super ()
   }
   render() {
     return (

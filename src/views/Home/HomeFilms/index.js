@@ -38,9 +38,6 @@ class LyjHome extends React.Component{
       this.setState({
         films: res.data.data.film
       })
-      console.log(res.data.data.film);
-      console.log(this.state.films);
-
   })
 
   }
@@ -76,8 +73,8 @@ class LyjHome extends React.Component{
                 {
                   this.state.films.map((item,index) => {
                       return (
-                        <Link to='/front?'>
-                        <div className='ljy-List' key={index}>
+                        <Link to='/front?' key={index}>
+                        <div className='ljy-List'>
                         <img src={item.img} alt="" />
                         <div className='lyj-filmsDetails'>
                           <div className='lyj-detailsList'>
