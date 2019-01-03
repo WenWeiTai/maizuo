@@ -26,13 +26,13 @@ class front extends Component {
     }
     render() {
         return (
-        <div className="my-front">
+        <div className="ss-my-front">
         {/* header */}
             <header className="navbarr">
             <div className="nav-wrap-left">
                 <i className="icon-back"></i>
             </div>
-            <h1 className="nav-header">{this.state.newdata.nm}</h1>
+            <p className="nav-headerr">{this.state.newdata.nm}</p>
             </header>
         {/* detail */}
             <div className="detail box-flex">
@@ -90,7 +90,7 @@ class front extends Component {
                                 <div className="title-block box-flex middle">
                                     <div className="title line-ellipsis">
                                         <span>{item.nm}</span>
-                                        <span className="price-block">
+                                        <span className="price-blockk">
                                             <span className="price">{item.sellPrice}</span><span className="q">元起</span>
                                         </span>
                                     </div>
@@ -117,13 +117,6 @@ class front extends Component {
                         )
                     })
                 }
-                </div>
-                <div className="locatebanner">
-                    <img className="locatebanner-arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACI0lEQVRoQ+2Z4VHDMAxGlQ3KBLABMAFsUDYAJkCdAJgAbQBswAbABLABMAFsYE53Mee2VmLZsZXekT/c0TT2iz8/y24HO351O95/+AdoNYKIuOi67tw5d0xEF77d2Y8AIh4AwDUAnAHAAgAuiehh9gCr1WrpnEMAOA1G+YuIGOjvmtUIBDHhjq91tO/xLRHdzA4gEhNpau0R0c9sAISYSJ1/DCev2RxIiIkEwPZ53/yw2RxQxCQG8EpE4WRuN4mVMZHe/po6q8+BgpjEALbUWQ2gMCbS299S5+QAE8UkWZ2TAEwcE5U6iwAqxUSlziyAyjFRqTMZoFFM1OocBWgcE7U6RQCDmGSpc3AE+rfPpSwv3Ud9WXsotVTp/1tVp9ROci2EiAzjgRiOIfcrAESrzmKA2AN4kvdQHoz/nhRCRavOKgDSQ4MY8u5JAyRWnU0BfGOIyKcH94oREatOKwCO1FsiwGDVaQLAjSKiSwQYrDotAXgbmKLhZHWOrsSJbyzpNkR8AoDlyM0qdbYGYBPxydrQpVJnawBe9J4Heq9WZ2sAXrE/BgDU6mwKMGKiLHVaALwIK3KWOi0ACACuIjHKUqcFAJ82320AZKvTAiBmomx1WgBw2f0dNFykzuYAvYk+gw1QkTqtALyJitVpBeBLimJ1WgH4zU2xOq0AeHODsZ+Jkspa4abkU4mSRvx3+WQj9jNRybObApR0VPruP0CNt6p55i/PKfMxjSGtyAAAAABJRU5ErkJggg==" alt=""/>
-                    <span className="locatebanner-content">定位失败，请稍后重试</span>
-                    <div className="locatebanner-refresh-wrap">
-                        <img alt="" className="locatebanner-refresh" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAEUElEQVRoQ91aTVbbSBCuEkjbkBMMc4KBE4ScgOQEMzlB8ILWYxWy4qm8sHOCkBMETjDkBHFOEDjBMFt+VHmfX8tPltQ/tuzgpJcgdddX9VV16SszbcgqiuIVEY2Y+coY8ybWLI59cN3PicgVEb3AOar6Ps/z05gzNwnABREdWgDXeZ7/uREARORFmqbfBoPBrc8gEfmHiD5WzzDzy+PjY0TFu1YWARjKzAeqekBEe0S04zj5SlUnRDTJsuyyAjYajXbu7u6umfmZjcKnPM8Ban0Azs7OdpMkecvMOMhlsM8AROWCmT/B20VRnDPz3/aFW2PM87UAgOFbW1vviCjooZABtf+DLt+I6G31N1V9nec5csO5FqaQiOAAVIhlPL4Anumjl8YYlNf+ACxHPzKzd0NVhRenXkuSZC4JVXW3yhFm/isGTZqmz30FICoCMP7+/v5fm5ytc2E0M48fHx+vTk5OrmMMs/kDCh5Viet4740x5ty1ZxCA5ftXB2VuQCffASEwNrJHHiBfjDGobJ3LC8DneVWNKnM+ANb4Q1vFOo0MneMFICKgTdfG3rCGvD4cDnFfoFw6q5iq/k9E4yzLxkvlQFEU4OaoaUzsDekCYSn53QNySss0TS9Ctzf26IyAh/e9PI8D0XUy8+cOAF9UdRyq+y2HdnmicSNOHwlxMUSb6v82r9BK/FHtW5blaWz1CgJwhPjGGLMba2ToOYB4eHjY297ensTQxLdfi0Jd3iei3tQJgVr2/y0AIvJfo+Z76/CyB6/qvTkAjgTbWO+3qpCIjOvdIB4I9SKr8uSy+8xFoP5dajfcaPp0RUDrnljk43pZD/Z9bxaBrvIZ80HR14C+788A2P4Evc9s9W0b+hoX874XABHtG2Nwa27s+r0B/FIUAkdEpFmFgqrAU3OreRPf1r9Pf6kyaiMwE1itZ4OyxqZF4JSZIVjN1qa0EsPhEMIvWvAP9Ra82UpA04QCUV9P3sw1erSJMWa/MrCrnYauM/1asgsDh5dPRZWuDsEYM7O764Om9TH/lC1FxwfWXIPZAtCUueF5VY0eOKwyUiLSonTzbupUJYqiaCUzEX0wxkBB+2lLRJCPAFGtVnvvFLZEpJkL2OSnJbSIYFrTFL5avZkTQFd3at2w9gaviwGuS9UrLTqotNZIFEWBUescVaF+53lep9KMU0F12iGzILGhog1WlRBW8IJiN6fFwvgsyw5c+lEQAAz0gECeDBaVA5ugPVOfmzRN95YSd5uHuEBUl52qntenjqHI2AvqUFVx77RUP3i+LMtXIckxKgKVMZjlgjq+iYqqXiRJMinLEiPTuWkNM++UZXnAzOCzc2gBHTbLsqMY2XEhAABiPYeRz/RnASteN4jIIpRcGEAjGgh/1LDOB7QaZsT+PqK+19IAqk1wX5RliQsHuv90yr7AusREs8+MrTeAurHoXTBGtUnZqtvoqYjoGuPXmN9BxDjiB9YfOU/rFhCmAAAAAElFTkSuQmCC" data-bid="{{pageConfig.locate_bid}}"/>
-                    </div>
                 </div>
             </div>
         {/*  */}
