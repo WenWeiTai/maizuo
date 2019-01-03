@@ -6,6 +6,7 @@ import NowPlaying from '@/components/NowPlaying';
 import SoonPlaying from '@/components/SoonPlaying';
 import { Tabs, WhiteSpace } from 'antd-mobile';
 import axios from 'axios';
+import store from '@/store';
 
 class LyjHome extends React.Component{
   constructor (props) {
@@ -21,13 +22,26 @@ class LyjHome extends React.Component{
       tabs:[
         { title: '正在上映' },
         { title: '即将上映' }
-      ]
+      ],
+      curCity: store.getState().city.curCity
     }
+    // 监听仓库当前城市状态
+    this.unsubscribe = store.subscribe(() => {
+      console.log('主页定位——仓库状态有更新')
+      this.setState({
+        curCity: store.getState().city.curCity
+      })
+    })
+  }
+  // 组件销毁取消监听
+  componentWillUnmount () {
+    this.unsubscribe()
   }
 
   // 组件挂载完成
   componentDidMount() {
     axios.get('http://10.36.140.90:4000/api/film/list',{
+    // axios.get('http://192.168.1.113:4000/api/film/list',{
       params: {
         // 第二个参数是get请求的参数
         pageNum: this.state.pageNum,
@@ -49,7 +63,7 @@ class LyjHome extends React.Component{
             <div className="lyj-cityFilmList">
                 <div className="lyj-xzCity">
                     <Link to='/city-list'>
-                        <span>深圳</span>
+                        <span>{ this.state.curCity }</span>
                         <i className="iconfont iconfont-arr_D"></i>
                     </Link>
                 </div>
