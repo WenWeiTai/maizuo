@@ -7,12 +7,12 @@ export default class index extends Component {
     return (
       <Fragment>
         <ul className="zk_subline">
-        <li>
-          <Link to='/register'>立即注册</Link>
-        </li>
-        <li>
-        <a href="javascript:;">找回密码</a>
-        </li>
+          <li>
+            <Link to='/register'>立即注册</Link>
+          </li>
+          <li>
+            <Link to='/'>返回首页</Link>
+          </li>
         </ul>
         <div className="copyright">
       <span>© 猫眼电影 客服电话：<a href="1">400-670-5335</a></span>

@@ -27,7 +27,7 @@ export default class index extends Component {
           <h3>电影/电视剧/综艺</h3>
           <div className="list">
             <div className="movie cell">
-              <img src={require('../../images/img1.jpg')}/>
+              <img src={require('../../images/img1.jpg')} alt=""/>
               <div className="info">
                 <div className="name-score">
                   <h4>情圣2</h4>

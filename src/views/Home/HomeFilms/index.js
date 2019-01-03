@@ -40,8 +40,8 @@ class LyjHome extends React.Component{
 
   // 组件挂载完成
   componentDidMount() {
-    // axios.get('http://10.36.140.90:4000/api/film/list',{
-    axios.get('http://192.168.1.113:4000/api/film/list',{
+    axios.get('http://10.36.140.90:4000/api/film/list',{
+    // axios.get('http://192.168.1.113:4000/api/film/list',{
       params: {
         // 第二个参数是get请求的参数
         pageNum: this.state.pageNum,
