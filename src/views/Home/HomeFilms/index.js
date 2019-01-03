@@ -2,11 +2,9 @@ import React,{ Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import './index.less';
 import LyjHeadBar from '@/components/HeadBar';
-import LyjFootBar from '@/components/FootBar';
 import NowPlaying from '@/components/NowPlaying';
 import SoonPlaying from '@/components/SoonPlaying';
 import { Tabs, WhiteSpace } from 'antd-mobile';
-
 import axios from 'axios';
 
 class LyjHome extends React.Component{
@@ -19,19 +17,11 @@ class LyjHome extends React.Component{
       films:[],
       tatal: 0,
       isShow:false,
-
       loadMoreText: "点击加载...",
-      tabs1: [
-        { id: 'films', name: '电影', href: '/films',icon:'iconfont-dianying1'},
-        { id: 'cinema', name: '影院', href: '/cinema',icon:'iconfont-yingyuana'},
-        { id: 'center', name: '我的', href: '/center',icon:'iconfont-wode'},
-      ],
-
       tabs:[
         { title: '正在上映' },
         { title: '即将上映' }
       ]
-
     }
   }
 
@@ -48,7 +38,6 @@ class LyjHome extends React.Component{
       this.setState({
         films: res.data.data.film
       })
-
   })
 
   }
@@ -58,14 +47,12 @@ class LyjHome extends React.Component{
         <LyjHeadBar></LyjHeadBar>
         <div className="lyj-homeFilm">
             <div className="lyj-cityFilmList">
-
                 <div className="lyj-xzCity">
                     <Link to='/city-list'>
                         <span>深圳</span>
                         <i className="iconfont iconfont-arr_D"></i>
                     </Link>
                 </div>
-
                 <div className="lyj-filmsList">
                   <ul>
                     {
@@ -78,14 +65,12 @@ class LyjHome extends React.Component{
                         {/* <li>即将上映</li> */}
                   </ul>
                 </div>
-
                 <div className='lyj-filmsSearch'>
                   <Link to='/search?filmId'>
                       <i className="iconfont iconfont-magnifier"></i>
                   </Link>
                 </div>
             </div>
-
             <div>
                 <WhiteSpace />
                 <Tabs tabs={this.state.tabs} initialPage={0} animated={false} useOnPan={false}>
@@ -99,12 +84,8 @@ class LyjHome extends React.Component{
                 </Tabs>
                 <WhiteSpace />
               </div>
-
-
-
             <p className="p4">{this.state.loadMoreText}</p>
         </div>
-        <LyjFootBar tabs={this.state.tabs1}></LyjFootBar>
       </Fragment>
     )
   }
