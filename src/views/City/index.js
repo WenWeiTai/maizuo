@@ -1,15 +1,50 @@
-import React, { Component } from 'react'
+import React, { Fragment,Component } from 'react'
 import './index.less'
+import http from '../../rxdserver';
 class index extends Component {
   constructor(props){
     super(props);
     this.state={
-      Listdata:[
-        '定位','最近','热门','A','B','C','D','E',
-        'F','G','H','I','J','K','L','M','N','O','P','Q',
-        'R','S','T','U','V','W','X','Y','Z'
-      ]
+      List:[]
     }
+  }
+  //请求城市数据
+  async getStudentList(){
+    const res = await http.get('./rxd-city.json')
+    let cityMap = {}; 
+    //按首字母分类
+    res.data.map((item)=>{
+      let letter = item.py[0];
+      if(!cityMap[letter]){
+        cityMap[letter]=[]
+      }
+      cityMap[letter].push(item)
+    })
+    let keys = Object.keys(cityMap);
+    //console.log(keys)
+    //console.log(cityMap);
+    //A-Z排序
+    for(let i = 0;i < keys.length; i++){
+      for(let j = i+1; j< keys.length; j++){
+        if(keys[i]>keys[j]){
+          let min = keys[i]
+          keys[i] = keys[j]
+          keys[j] = min;
+        }
+      }
+    }
+    //组装数据
+    let last = keys.map(letter=>{
+      return {
+        key:letter.toUpperCase(),
+        value: cityMap[letter]
+      }
+    })
+    this.setState({List: last})
+    console.log(this.state.List)
+  }
+  componentDidMount(){
+    this.getStudentList()
   }
   render() {
     return (
@@ -45,34 +80,31 @@ class index extends Component {
           </div>
         </div>
         <div className="city-title">
-          <div className="zimu">A</div>
-          <ul>
-            <li>鞍山</li>
-            <li>安阳</li>
-            <li>安庆</li>
-            <li>安康</li>
-            <li>鞍山</li>
-            <li>安阳</li>
-            <li>安庆</li>
-            <li>安康</li>
-            <li>鞍山</li>
-            <li>安阳</li>
-            <li>安庆</li>
-            <li>安康</li>
-            <li>鞍山</li>
-            <li>安阳</li>
-            <li>安庆</li>
-            <li>安康</li>
-          </ul>
+            {
+              this.state.List.map((item,index)=>{
+                return (
+                  <Fragment key={index}>
+                    <div className="zimu" key={index}>{item.key}</div>
+                    <ul key={item.key}>
+                      {
+                        item.value.map((result,indexs)=>{
+                          return(
+                            <li key={indexs}>{result.nm}</li>
+                          )
+                        })
+                      }
+                    </ul>
+                  </Fragment>
+                )
+              })
+            }
         </div>
         <div className="nav">
           <ul>
             {
-              this.state.Listdata.map((item,index)=>{
-                return (
-                  <li className="nav-list" key={index}>
-                    {item}
-                  </li>
+              this.state.List.map((item,index)=>{
+                return(
+                  <li key={index}>{item.key}</li>
                 )
               })
             }

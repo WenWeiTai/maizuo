@@ -1,6 +1,7 @@
 import React from 'react';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import City from './views/City'
+import Rxdsearch from './views/search';
 import Front from '@/views/DetailFront/index.js'
 import Zk_Deraul from './views/Detail';
 import './styles/base.less';
@@ -19,6 +20,7 @@ class App extends React.Component {
             <Route path="/detail" component={Zk_Deraul}></Route>
             <Route path="/front" component={Front}></Route>
             <Route path="/center" component={Center}></Route>
+            <Route path="/search" component={Rxdsearch}></Route>
             <Redirect to="/movie"></Redirect>
           </Switch>
         </Router>
