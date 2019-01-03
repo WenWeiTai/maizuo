@@ -1,0 +1,530 @@
+{
+  "cinemas": [{
+    "id": 9627,
+    "mark": 0,
+    "nm": "星美国际影商城(凤凰世纪商业广场店)",
+    "sellPrice": "39",
+    "addr": "宝安区大洋路178号凤凰世纪商业广场首层（好万年超市对面）",
+    "distance": "900m",
+    "tag": {
+      "allowRefund": 0,
+      "buyout": 0,
+      "cityCardTag": 0,
+      "deal": 0,
+      "endorse": 0,
+      "hallTypeVOList": [],
+      "sell": 1,
+      "snack": 0
+    },
+    "promotion": {},
+    "showTimes": "15:40 | 16:40 | 17:40"
+  }, {
+    "id": 13046,
+    "mark": 0,
+    "nm": "东海国际影城",
+    "sellPrice": "41",
+    "addr": "宝安区福永街道桥头社区永福路120号（东海百货4楼）",
+    "distance": "1.4km",
+    "tag": {
+      "allowRefund": 0,
+      "buyout": 0,
+      "cityCardTag": 0,
+      "deal": 0,
+      "endorse": 1,
+      "hallTypeVOList": [],
+      "sell": 1,
+      "snack": 1,
+      "vipTag": "折扣卡"
+    },
+    "promotion": {
+      "cardPromotionTag": "限时¥6.9促销开卡，首单更优惠"
+    },
+    "showTimes": "16:28 | 17:25 | 18:18"
+  }, {
+    "id": 11492,
+    "mark": 0,
+    "nm": "东影南国国际影城(福永唐美店)",
+    "sellPrice": "38",
+    "addr": "宝安区凤塘大道523号唐美商场4楼",
+    "distance": "1.6km",
+    "tag": {
+      "allowRefund": 1,
+      "buyout": 0,
+      "cityCardTag": 0,
+      "deal": 0,
+      "endorse": 1,
+      "hallType": ["CGS中国巨幕厅"],
+      "hallTypeVOList": [{
+        "name": "CGS中国巨幕厅",
+        "url": ""
+      }],
+      "sell": 1,
+      "snack": 1,
+      "vipTag": "折扣卡"
+    },
+    "promotion": {
+      "cardPromotionTag": "开卡特惠，首单2张立减6元"
+    },
+    "showTimes": "15:45 | 16:45 | 17:45"
+  }, {
+    "id": 23768,
+    "mark": 0,
+    "nm": "太平洋影城(深圳同泰时代广场店)",
+    "sellPrice": "39",
+    "addr": "宝安区福永街道同泰时代广场4层",
+    "distance": "1.9km",
+    "tag": {
+      "allowRefund": 0,
+      "buyout": 0,
+      "cityCardTag": 0,
+      "deal": 0,
+      "endorse": 1,
+      "hallType": ["CGS中国巨幕厅", "杜比全景声厅"],
+      "hallTypeVOList": [{
+        "name": "CGS中国巨幕厅",
+        "url": ""
+      }, {
+        "name": "杜比全景声厅",
+        "url": ""
+      }],
+      "sell": 1,
+      "snack": 1,
+      "vipTag": "折扣卡"
+    },
+    "promotion": {
+      "cardPromotionTag": "限时¥6.9促销开卡，首单更优惠"
+    },
+    "showTimes": "15:40 | 18:40 | 19:20"
+  }, {
+    "id": 24021,
+    "mark": 0,
+    "nm": "中影星美明星国际影城(福永康之宝店)",
+    "sellPrice": "43",
+    "addr": "宝安区福永街道康之宝超级广场三楼",
+    "distance": "2.4km",
+    "tag": {
+      "allowRefund": 0,
+      "buyout": 0,
+      "cityCardTag": 0,
+      "deal": 0,
+      "endorse": 1,
+      "hallTypeVOList": [],
+      "sell": 1,
+      "snack": 1
+    },
+    "promotion": {},
+    "showTimes": "16:00 | 17:20 | 18:05"
+  }, {
+    "id": 16901,
+    "mark": 0,
+    "nm": "环球国际影城(福永凤凰山店)",
+    "sellPrice": "38",
+    "addr": "宝安区福永街道凤凰社区凤凰御林山景F3-03",
+    "distance": "2.7km",
+    "tag": {
+      "allowRefund": 0,
+      "buyout": 0,
+      "cityCardTag": 0,
+      "deal": 0,
+      "endorse": 1,
+      "hallTypeVOList": [],
+      "sell": 1,
+      "snack": 1,
+      "vipTag": "折扣卡"
+    },
+    "promotion": {
+      "cardPromotionTag": "限时¥14.9促销开卡，首单更优惠"
+    },
+    "showTimes": "16:50 | 18:05 | 19:00"
+  }, {
+    "id": 2424,
+    "mark": 0,
+    "nm": "中影UL城市影院(福永店)",
+    "sellPrice": "44",
+    "addr": "宝安区福永大道国惠康百货4楼",
+    "distance": "2.7km",
+    "tag": {
+      "allowRefund": 0,
+      "buyout": 0,
+      "cityCardTag": 0,
+      "deal": 0,
+      "endorse": 1,
+      "hallTypeVOList": [],
+      "sell": 1,
+      "snack": 1,
+      "vipTag": "折扣卡"
+    },
+    "promotion": {
+      "cardPromotionTag": "限时¥6.9促销开卡，首单更优惠"
+    },
+    "showTimes": "15:40 | 17:35 | 19:30"
+  }, {
+    "id": 15406,
+    "mark": 0,
+    "nm": "幕森国际影城",
+    "sellPrice": "44",
+    "addr": "宝安区福永街道128号怀德村委旁汇隆城5层",
+    "distance": "2.7km",
+    "tag": {
+      "allowRefund": 0,
+      "buyout": 0,
+      "cityCardTag": 0,
+      "deal": 0,
+      "endorse": 0,
+      "hallTypeVOList": [],
+      "sell": 1,
+      "snack": 0,
+      "vipTag": "折扣卡"
+    },
+    "promotion": {
+      "cardPromotionTag": "限时¥14.9促销开卡，首单更优惠"
+    },
+    "showTimes": "15:50 | 16:20 | 17:45"
+  }, {
+    "id": 24103,
+    "mark": 0,
+    "nm": "益田国际影城(福永店)",
+    "sellPrice": "38",
+    "addr": "宝安区福永街道永泰西路益田假日天地二楼",
+    "distance": "2.8km",
+    "tag": {
+      "allowRefund": 1,
+      "buyout": 0,
+      "cityCardTag": 0,
+      "deal": 0,
+      "endorse": 1,
+      "hallType": ["杜比全景声厅"],
+      "hallTypeVOList": [{
+        "name": "杜比全景声厅",
+        "url": ""
+      }],
+      "sell": 1,
+      "snack": 1,
+      "vipTag": "折扣卡"
+    },
+    "promotion": {
+      "cardPromotionTag": "开卡特惠，首单2张立减4元"
+    },
+    "showTimes": "16:35 | 17:20 | 18:35"
+  }, {
+    "id": 6326,
+    "mark": 0,
+    "nm": "中影德金影城和平店",
+    "sellPrice": "41",
+    "addr": "宝安区福永镇和平村桥和路315号（德金财富广场）",
+    "distance": "3km",
+    "tag": {
+      "allowRefund": 0,
+      "buyout": 0,
+      "cityCardTag": 0,
+      "deal": 0,
+      "endorse": 0,
+      "hallTypeVOList": [],
+      "sell": 1,
+      "snack": 1,
+      "vipTag": "折扣卡"
+    },
+    "promotion": {
+      "cardPromotionTag": "开卡特惠，首单2张立减6元"
+    },
+    "showTimes": "15:25 | 16:25 | 17:20"
+  }, {
+    "id": 13729,
+    "mark": 0,
+    "nm": "中影德金影院福永店",
+    "sellPrice": "41",
+    "addr": "宝安区福永街道翠岗公园群艺馆一楼",
+    "distance": "3.4km",
+    "tag": {
+      "allowRefund": 1,
+      "buyout": 0,
+      "cityCardTag": 0,
+      "deal": 0,
+      "endorse": 1,
+      "hallTypeVOList": [],
+      "sell": 1,
+      "snack": 1,
+      "vipTag": "折扣卡"
+    },
+    "promotion": {
+      "cardPromotionTag": "限时¥6.9促销开卡，首单更优惠"
+    },
+    "showTimes": "16:45 | 18:40 | 20:35"
+  }, {
+    "id": 8620,
+    "mark": 0,
+    "nm": "中影DY影城(沙井店)",
+    "sellPrice": "38",
+    "addr": "宝安区沙井街道中心路34-1号形色城购物广场6楼（市民广场旁，老天虹对面）",
+    "distance": "3.5km",
+    "tag": {
+      "allowRefund": 0,
+      "buyout": 0,
+      "cityCardTag": 0,
+      "deal": 0,
+      "endorse": 1,
+      "hallType": ["CGS中国巨幕厅", "杜比全景声厅"],
+      "hallTypeVOList": [{
+        "name": "CGS中国巨幕厅",
+        "url": ""
+      }, {
+        "name": "杜比全景声厅",
+        "url": ""
+      }],
+      "sell": 1,
+      "snack": 1,
+      "vipTag": "折扣卡"
+    },
+    "promotion": {
+      "cardPromotionTag": "限时¥14.9促销开卡，首单更优惠"
+    },
+    "showTimes": "16:05 | 18:00 | 19:55"
+  }, {
+    "id": 7982,
+    "mark": 0,
+    "nm": "中影飞尚百誉国际影城",
+    "sellPrice": "39",
+    "addr": "宝安区沙井街道沙井路168号中熙广场沙井京基百纳广场五L5-502、六楼L6-602",
+    "distance": "4km",
+    "tag": {
+      "allowRefund": 0,
+      "buyout": 0,
+      "cityCardTag": 0,
+      "deal": 0,
+      "endorse": 0,
+      "hallType": ["CGS中国巨幕厅"],
+      "hallTypeVOList": [{
+        "name": "CGS中国巨幕厅",
+        "url": ""
+      }],
+      "sell": 1,
+      "snack": 1,
+      "vipTag": "折扣卡"
+    },
+    "promotion": {
+      "cardPromotionTag": "开卡特惠，首单2张立减10元"
+    },
+    "showTimes": "15:50 | 17:55 | 18:40"
+  }, {
+    "id": 25644,
+    "mark": 0,
+    "nm": "华夏星光国际影城(新桥店)",
+    "sellPrice": "34",
+    "addr": "宝安区新桥街道中心路36号新桥文化艺术中心二层（市民广场旁）",
+    "distance": "4km",
+    "tag": {
+      "allowRefund": 0,
+      "buyout": 0,
+      "cityCardTag": 0,
+      "deal": 0,
+      "endorse": 0,
+      "hallTypeVOList": [],
+      "sell": 1,
+      "snack": 1,
+      "vipTag": "折扣卡"
+    },
+    "promotion": {
+      "cardPromotionTag": "开卡特惠，首单2张立减2元"
+    },
+    "showTimes": "16:35 | 19:40 | 23:00"
+  }, {
+    "id": 11117,
+    "mark": 0,
+    "nm": "德信影城(沙井联诚店)",
+    "sellPrice": "38",
+    "addr": "宝安区上南大街（联城购物广场4楼，原东影南国影城）",
+    "distance": "4km",
+    "tag": {
+      "allowRefund": 0,
+      "buyout": 0,
+      "cityCardTag": 0,
+      "deal": 0,
+      "endorse": 1,
+      "hallTypeVOList": [],
+      "sell": 1,
+      "snack": 1,
+      "vipTag": "折扣卡"
+    },
+    "promotion": {
+      "cardPromotionTag": "开卡特惠，首单2张立减4元"
+    },
+    "showTimes": "15:45 | 16:30 | 17:35"
+  }, {
+    "id": 1637,
+    "mark": 0,
+    "nm": "大地影院(裕客隆店)",
+    "sellPrice": "36.9",
+    "addr": "宝安区沙井街道办沙井路180号裕客隆百货广场4楼",
+    "distance": "4.1km",
+    "tag": {
+      "allowRefund": 0,
+      "buyout": 0,
+      "cityCardTag": 0,
+      "deal": 0,
+      "endorse": 0,
+      "hallTypeVOList": [],
+      "sell": 1,
+      "snack": 1,
+      "vipTag": "折扣卡"
+    },
+    "promotion": {
+      "cardPromotionTag": "开卡特惠，首单1张立减8元"
+    },
+    "showTimes": "16:00 | 17:00 | 18:00"
+  }, {
+    "id": 18,
+    "mark": 0,
+    "nm": "完美世界影城(17.5沙井店)",
+    "sellPrice": "29",
+    "addr": "宝安区（原17.5影城）沙井街道新沙路与中心路交汇处华润万家4楼A",
+    "distance": "4.1km",
+    "tag": {
+      "allowRefund": 0,
+      "buyout": 0,
+      "cityCardTag": 0,
+      "deal": 0,
+      "endorse": 0,
+      "hallTypeVOList": [],
+      "sell": 1,
+      "snack": 1,
+      "vipTag": "折扣卡"
+    },
+    "promotion": {
+      "cardPromotionTag": "限时¥17.9促销开卡，首单更优惠"
+    },
+    "showTimes": "15:30 | 16:10 | 17:30"
+  }, {
+    "id": 16703,
+    "mark": 0,
+    "nm": "百川影城IMAX(新沙天虹店)",
+    "sellPrice": "41",
+    "addr": "宝安区沙井街道西环路2105号天虹商场7楼",
+    "distance": "4.3km",
+    "tag": {
+      "allowRefund": 1,
+      "buyout": 0,
+      "cityCardTag": 0,
+      "deal": 0,
+      "endorse": 1,
+      "hallType": ["IMAX厅", "巨幕厅"],
+      "hallTypeVOList": [{
+        "name": "IMAX厅",
+        "url": ""
+      }, {
+        "name": "巨幕厅",
+        "url": ""
+      }],
+      "sell": 1,
+      "snack": 1,
+      "vipTag": "折扣卡"
+    },
+    "promotion": {
+      "cardPromotionTag": "限时¥6.9促销开卡，首单更优惠"
+    },
+    "showTimes": "16:05 | 17:00 | 18:20"
+  }, {
+    "id": 12882,
+    "mark": 0,
+    "nm": "华夏星光国际影城(沙井店)",
+    "sellPrice": "39",
+    "addr": "宝安区沙井街道中心路深圳书城（华润万佳旁50米）",
+    "distance": "4.4km",
+    "tag": {
+      "allowRefund": 0,
+      "buyout": 0,
+      "cityCardTag": 0,
+      "deal": 0,
+      "endorse": 0,
+      "hallType": ["杜比全景声厅", "4K厅", "巨幕厅"],
+      "hallTypeVOList": [{
+        "name": "杜比全景声厅",
+        "url": ""
+      }, {
+        "name": "4K厅",
+        "url": ""
+      }, {
+        "name": "巨幕厅",
+        "url": ""
+      }],
+      "sell": 1,
+      "snack": 1,
+      "vipTag": "折扣卡"
+    },
+    "promotion": {
+      "cardPromotionTag": "限时¥6.9促销开卡，首单更优惠"
+    },
+    "showTimes": "16:35 | 18:00 | 20:10"
+  }, {
+    "id": 25716,
+    "mark": 0,
+    "nm": "中影星火巨幕影城",
+    "sellPrice": "28",
+    "addr": "宝安区沙井街道西荟城购物广场2期三楼",
+    "distance": "4.5km",
+    "tag": {
+      "allowRefund": 1,
+      "buyout": 0,
+      "cityCardTag": 0,
+      "deal": 0,
+      "endorse": 1,
+      "hallType": ["杜比全景声厅", "4K厅", "4D厅", "巨幕厅"],
+      "hallTypeVOList": [{
+        "name": "杜比全景声厅",
+        "url": ""
+      }, {
+        "name": "4K厅",
+        "url": ""
+      }, {
+        "name": "4D厅",
+        "url": ""
+      }, {
+        "name": "巨幕厅",
+        "url": ""
+      }],
+      "sell": 1,
+      "snack": 1,
+      "vipTag": "折扣卡"
+    },
+    "promotion": {
+      "cardPromotionTag": "限时¥6.9促销开卡，首单更优惠"
+    },
+    "showTimes": "15:55 | 16:55 | 17:45"
+  }],
+  "movieId": "1240159",
+  "day": "2019-01-03",
+  "random": 1546500163638,
+  "paging": {
+    "hasMore": true,
+    "limit": 20,
+    "offset": 0,
+    "total": 260
+  },
+  "showDays": {
+    "dates": [{
+      "date": "2019-01-03",
+      "isPredate": 0
+    }, {
+      "date": "2019-01-04",
+      "isPredate": 0
+    }, {
+      "date": "2019-01-05",
+      "isPredate": 0
+    }, {
+      "date": "2019-01-06",
+      "isPredate": 0
+    }, {
+      "date": "2019-01-07",
+      "isPredate": 0
+    }, {
+      "date": "2019-01-08",
+      "isPredate": 0
+    }, {
+      "date": "2019-01-09",
+      "isPredate": 0
+    }, {
+      "date": "2019-01-10",
+      "isPredate": 0
+    }]
+  },
+  "resId": "1546500189764"
+}

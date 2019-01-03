@@ -10,6 +10,8 @@ import Center from './views/Center';
 import Card from './views/Card';
 import Cinema from './views/Cinema';
 import user from './views/User';
+import Register from './views/register/index.js'
+
 
 class App extends React.Component {
 
@@ -40,6 +42,7 @@ class App extends React.Component {
             <Route path="/card" component={Card}></Route>
             <Route path="/cinema" component={Cinema}></Route>
             <Route path="/user" component={user}></Route>
+            <Route path="/register" component={Register}></Route>
             <Redirect to="/movie"></Redirect>
           </Switch>
         </Router>
