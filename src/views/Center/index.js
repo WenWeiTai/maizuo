@@ -4,6 +4,8 @@ import './index.less';
 
 import Header from '@/components/wwt-Hearder';
 
+import { NavLink } from 'react-router-dom';
+
 class Center extends Component {
   render() {
     return (
@@ -19,10 +21,14 @@ class Center extends Component {
                 <div className='title'>我的订单</div>
                 <div className='list'>
                   <div className='order-item movie'>
-                    <a href="javascript:;"><p>电影</p></a>
+                    <NavLink to='/card'>
+                      <p>电影</p>
+                    </NavLink>
                   </div>
                   <div className='order-item store'>
-                    <a><p>商城</p></a>
+                    <NavLink to='/card'>
+                      <p>商城</p>
+                    </NavLink>
                   </div>
                 </div>
               </div>
@@ -31,19 +37,19 @@ class Center extends Component {
           <div className='group'>
             <div className='mb-outline-tb'>
               <div className='coupon item mb-line-b'>
-                <a>
+                <NavLink to='/card'>
                   <span>在线观影</span>
-                </a>
+                </NavLink>
               </div>
               <div className='coupon item mb-line-b'>
-                <a>
+                <NavLink to='/card'>
                   <span>优惠券</span>
-                </a>
+                </NavLink>
               </div>
               <div className='coupon item mb-line-b'>
-                <a>
+                <NavLink to='/card'>
                   <span>折扣卡</span>
-                </a>
+                </NavLink>
               </div>
               <div></div>
               <div></div>
