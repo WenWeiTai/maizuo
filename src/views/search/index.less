@@ -1,0 +1,196 @@
+.search{
+  height: 100%;
+  width: 100%;
+  header {
+    height: 50px;
+    color: #fff;
+    background: #e54847;
+    position: relative;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    display: flex;
+    .nav-wrap-left {
+      width: 52px;
+      height: 50px;
+      line-height: 50px;
+      color: #fff;
+      i{
+        font-size: 35px;
+      }
+    }
+    .nav-header {
+      display: block;
+      flex: 1;
+      font-size: 18px;
+      font-weight: 400;
+      text-align: center;
+      line-height: 50px;
+      margin: 0 52.5px 0 0;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+  .main{
+    .search-header{
+      display: flex;
+      align-items: center;
+      padding: 8px 0 8px 10px;
+      background-color: #f5f5f5;
+      border-bottom: 1px solid #e5e5e5;
+      z-index: 1;
+      .ipt-wrapper{
+        padding: 0 10px;
+        border: 1px solid #e6e6e6;
+        border-radius: 5px;
+        background-color: #fff;
+        -webkit-box-flex: 1;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        .iconhead{
+          width: 15px;
+          height: 15px;
+          margin-right: 6px;
+        }
+        .search-ipt{
+          flex: 1;
+          border: none;
+          font-size: 13px;
+          color: #333;
+          line-height: 20px;
+          padding: 4px 0;
+          outline: none;
+          width: calc(100% - 40px);
+        }
+        .iconfoot{
+          width: 15px;
+          height: 15px;
+          background: rgba(104, 102, 102,0.6);
+          border-radius: 50%;
+        }
+      }
+      .cancel{
+        height: 30px;
+        line-height: 30px;
+        padding: 0 10px;
+        font-size: 16px;
+        color: #f03d37;
+      }
+    }
+  }
+  .hot-search{
+    padding: 0 0 8px 15px;
+    background-color: #fff;
+    top: -1px;
+      h3{
+        border-top: 1px solid #e5e5e5;
+        padding-top: 17px;
+        font-size: 15px;
+        color: #666;
+      }
+      .hot-movies-wrap{
+        margin-top: 15px;
+        padding-right: 15px;
+        overflow: hidden;
+      }
+  }
+  .search-result{
+    height: 100%;
+    overflow: hidden;
+    margin-bottom: 10px;
+    background-color: #fff;
+    h3{
+      font-size: 15px;
+      color: #999;
+      padding: 9px 15px;
+    }
+    .list{
+      padding-left: 15px;
+      border-top: 1px solid #e6e6e6;
+      border-bottom: 1px solid #e6e6e6;
+      .movie{
+        display: flex;
+        padding: 12px 0;
+        min-height: 90px;
+        img{
+          width: 64px;
+          height: 90px;
+          display: block;
+          margin-right: 10px;
+        }
+        .info{
+          flex: 1;
+          margin-right: 15px;
+          .name-score{
+            font-size: 16px;
+            color: #222;
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            margin-bottom: 2px;
+            h4{
+              font-weight: 800;
+            }
+            .score{
+              color: #fa0;
+              font-size: 10px;
+              flex-shrink: 0;
+              padding-left: 5px;
+            }
+          }
+          .detail-section{
+            position: relative;
+            .detail-items{
+              flex-grow: 1;
+              overflow: hidden;
+              padding-right: 10px;
+              margin-right: 48px;
+              min-height: 27px;
+              .ename{
+                font-size: 13px;
+                color: #666;
+                margin-top: 2px;
+              }
+              .catogary{
+                font-size: 13px;
+                color: #666;
+                margin-top: 2px;
+              }
+              .release{
+                font-size: 13px;
+                color: #666;
+                margin-top: 2px;
+              }
+            }
+            .wantlock{
+              background-color: #faaf00;
+              border: none;
+              color: #fff;
+              border-radius: 4px;
+              font-size: 12px;
+              align-self: flex-end;
+              flex-shrink: 0;
+              width: 48px;
+              text-align: center;
+              height: 27px;
+              line-height: 27px;
+              right: 0;
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              margin: auto;
+            }
+          }
+        }
+      }
+    }
+    .more-movies{
+      color: #ef4238;
+      text-align: center;
+      line-height: 44px;
+      height: 44px;
+      font-size: 15px;
+    }
+  }
+}

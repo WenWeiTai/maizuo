@@ -2,6 +2,7 @@ import React from 'react';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import store from './store';
 import City from './views/City'
+import Rxdsearch from './views/search';
 import Front from '@/views/DetailFront/index.js'
 import Zk_Deraul from './views/Detail';
 import './styles/base.less';
@@ -43,6 +44,7 @@ class App extends React.Component {
             <Route path="/cinema" component={Cinema}></Route>
             <Route path="/user" component={user}></Route>
             <Route path="/register" component={Register}></Route>
+            <Route path="/search" component={Rxdsearch}></Route>
             <Redirect to="/movie"></Redirect>
           </Switch>
         </Router>
