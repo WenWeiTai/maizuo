@@ -2,9 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './index.less';
 class FootBar extends React.Component{
-  constructor (props) {
-    super (props)
-  }
   render(){
     return (
           <ul className="ljy-footBar">
@@ -16,7 +13,7 @@ class FootBar extends React.Component{
                     key={ item.id }
                   >
                     <NavLink to={ item.href }>
-                      <i className="img"></i>
+                      <i className={`iconfont ${item.icon}`}></i>
                       <span>{ item.name }</span>
                     </NavLink>
                   </li>
