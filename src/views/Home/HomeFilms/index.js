@@ -78,7 +78,7 @@ class LyjHome extends React.Component{
                       return (
                         <Link to='/front?'>
                         <div className='ljy-List' key={index}>
-                        <img src={require('@/images/img1.jpg')} alt="" />
+                        <img src={item.img} alt="" />
                         <div className='lyj-filmsDetails'>
                           <div className='lyj-detailsList'>
                           <div className="lyj-title">
@@ -97,7 +97,7 @@ class LyjHome extends React.Component{
                           </div>
 
                           <div className='lyj-gouPiao'>
-                            <div className="gouPiao" >购票</div>
+                            <div className="gouPiao">购票</div>
                           </div>
                         </div>
 
