@@ -1,4 +1,5 @@
 import React, { Component , Fragment} from 'react'
+import { Link } from 'react-router-dom';
 import './index.less'
 
 export default class index extends Component {
@@ -7,10 +8,10 @@ export default class index extends Component {
       <Fragment>
         <ul className="zk_subline">
         <li>
-          <a href="1">立即注册</a>
+          <Link to='/register'>立即注册</Link>
         </li>
         <li>
-        <a href="1">找回密码</a>
+        <a href="javascript:;">找回密码</a>
         </li>
         </ul>
         <div className="copyright">
