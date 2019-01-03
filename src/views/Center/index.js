@@ -10,7 +10,7 @@ class Center extends Component {
       <div className="my-center">
         <Header title='我的'></Header>
         <div className='user'>
-          <img />
+          <img alt=""/>
         </div>
         <div className='container'>
           <div className='group'>
@@ -19,7 +19,7 @@ class Center extends Component {
                 <div className='title'>我的订单</div>
                 <div className='list'>
                   <div className='order-item movie'>
-                    <a><p>电影</p></a>
+                    <a href="javascript:;"><p>电影</p></a>
                   </div>
                   <div className='order-item store'>
                     <a><p>商城</p></a>
