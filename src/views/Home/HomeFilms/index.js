@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import './index.less';
 import LyjHeadBar from '@/components/HeadBar';
 import LyjFootBar from '@/components/FootBar';
+import NowPlaying from '@/components/NowPlaying';
+import SoonPlaying from '@/components/SoonPlaying';
+import { Tabs, WhiteSpace } from 'antd-mobile';
+
 import axios from 'axios';
 
 class LyjHome extends React.Component{
@@ -14,16 +18,22 @@ class LyjHome extends React.Component{
       totalPage: 0, //总页数
       films:[],
       tatal: 0,
+      isShow:false,
 
       loadMoreText: "点击加载...",
-      tabs: [
+      tabs1: [
         { id: 'films', name: '电影', href: '/films',icon:'iconfont-dianying1'},
         { id: 'cinema', name: '影院', href: '/cinema',icon:'iconfont-yingyuana'},
         { id: 'center', name: '我的', href: '/center',icon:'iconfont-wode'},
+      ],
+
+      tabs:[
+        { title: '正在上映' },
+        { title: '即将上映' }
       ]
+
     }
   }
-
 
   // 组件挂载完成
   componentDidMount() {
@@ -38,6 +48,7 @@ class LyjHome extends React.Component{
       this.setState({
         films: res.data.data.film
       })
+
   })
 
   }
@@ -57,8 +68,14 @@ class LyjHome extends React.Component{
 
                 <div className="lyj-filmsList">
                   <ul>
-                    <li>正在热映</li>
-                    <li>即将上映</li>
+                    {
+                      this.state.tabs.map((item,index) => {
+                        return (
+                          <li key={index}>{item.title}</li>
+                          )
+                      })
+                    }
+                        {/* <li>即将上映</li> */}
                   </ul>
                 </div>
 
@@ -69,45 +86,25 @@ class LyjHome extends React.Component{
                 </div>
             </div>
 
-            <div className="lyj-cityList">
-                {
-                  this.state.films.map((item,index) => {
-                      return (
-                        <Link to='/front?' key={index}>
-                        <div className='ljy-List'>
-                        <img src={item.img} alt="" />
-                        <div className='lyj-filmsDetails'>
-                          <div className='lyj-detailsList'>
-                          <div className="lyj-title">
-                            <h2>{item.nm}</h2>
+            <div>
+                <WhiteSpace />
+                <Tabs tabs={this.state.tabs} initialPage={0} animated={false} useOnPan={false}>
 
-                            <div className="lyj-3dBox">
-                                <div className="lyj3d">{`${item.showst}D`}</div>
-                                <div className="lyjIMAX">IMAX</div>
-                            </div>
-                          </div>
+                  <div style={{ alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff' }}>
+                      <NowPlaying films={this.state.films}></NowPlaying>
+                  </div>
+                  <div style={{ alignItems: 'center', justifyContent: 'center',  backgroundColor: '#fff' }}>
+                      <SoonPlaying films={this.state.films}></SoonPlaying>
+                  </div>
+                </Tabs>
+                <WhiteSpace />
+              </div>
 
-                          <p className="p1">观众评<span>{item.sc}</span></p>
-                          <p className="p2">{`主演 : ${item.star}`}</p>
-                          <p className="p3">{item.showInfo}</p>
 
-                          </div>
 
-                          <div className='lyj-gouPiao'>
-                            <div className="gouPiao">购票</div>
-                          </div>
-                        </div>
-
-                      </div>
-                      </Link>
-
-                       )
-                  })
-                }
-            </div>
             <p className="p4">{this.state.loadMoreText}</p>
         </div>
-        <LyjFootBar tabs={this.state.tabs}></LyjFootBar>
+        <LyjFootBar tabs={this.state.tabs1}></LyjFootBar>
       </Fragment>
     )
   }
