@@ -6,6 +6,7 @@ import Zk_Deraul from './views/Detail';
 import './styles/base.less';
 import LyjHome from './views/Home/HomeFilms';
 import Center from './views/Center';
+import Card from './views/Card';
 
 class App extends React.Component {
 
@@ -19,6 +20,7 @@ class App extends React.Component {
             <Route path="/detail" component={Zk_Deraul}></Route>
             <Route path="/front" component={Front}></Route>
             <Route path="/center" component={Center}></Route>
+            <Route path="/card" component={Card}></Route>
             <Redirect to="/movie"></Redirect>
           </Switch>
         </Router>
