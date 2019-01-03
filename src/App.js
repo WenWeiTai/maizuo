@@ -7,6 +7,7 @@ import './styles/base.less';
 import LyjHome from './views/Home/HomeFilms';
 import Center from './views/Center';
 import Card from './views/Card';
+import user from './views/User';
 
 class App extends React.Component {
 
@@ -21,6 +22,7 @@ class App extends React.Component {
             <Route path="/front" component={Front}></Route>
             <Route path="/center" component={Center}></Route>
             <Route path="/card" component={Card}></Route>
+            <Route path="/user" component={user}></Route>
             <Redirect to="/movie"></Redirect>
           </Switch>
         </Router>
