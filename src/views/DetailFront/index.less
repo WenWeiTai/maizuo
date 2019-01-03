@@ -1,17 +1,36 @@
 .my-front{
-  .navbar {
+  .navbarr{
     height: 50.5px;
     color: #fff;
     background: #e54847;
     border-bottom: 1px solid #e54847;
     position: relative;
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
     .nav-wrap-left {
       height: 50.5px;
       line-height: 50.5px;
       position: absolute;
       left: 0;
       top: 0;
+      .icon-back {
+        display: inline-block;
+        width: 22.5px;
+        height: 22.5px;
+        vertical-align: middle;
+        position: relative;
+        margin-left:15px;
+      }
+      .icon-back:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 16px;
+        height: 16px;
+        border-bottom: 2px solid #fff;
+        border-left: 2px solid #fff;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
     }
     .nav-header {
       display: block;
@@ -22,6 +41,7 @@
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
+
     }
   }
   .detail{
@@ -111,16 +131,20 @@
   }
   #showDays{
     width: 100%;
-    background-color: #fff;
+    background: #fff;
     overflow-x: scroll;
     height: 45px;
+    position: sticky;
+    top:0px;
+    z-index: 10;
+    overflow: hidden;
     #timeline{
       border-bottom:1px solid #eee;
       padding: 0;
       margin: 0;
       white-space: nowrap;
       overflow-x: scroll;
-      height: 45px;
+      height: 52px;
       box-sizing: border-box;
       .showDay{
         position: relative;
@@ -144,8 +168,10 @@
     height: 40px;
     z-index: 10;
     background-color: #fff;
-    position: relative;
+    position: sticky;
+    top:45px;
     .tab{
+      border-top: 1px solid #eee;
       border-bottom: 1px solid #eee;
       display: flex;
       .item{
@@ -282,7 +308,7 @@
     .locatebanner {
       position: fixed;
       z-index: 1;
-      bottom: 50px;
+      bottom: 0px;
       left: 0;
       right: 0;
       margin: 0 12px 11px;
@@ -295,6 +321,16 @@
       display: flex;
       align-content: center;
       margin-bottom: env(safe-area-inset-bottom);
+      img {
+        width: 14px;
+        height: 14px;
+        margin-top: 2px;
+      }
+      .locatebanner-refresh-wrap {
+        -webkit-box-flex: 1;
+        flex-grow: 1;
+        text-align: right;
+      }
     }
   }
 }
