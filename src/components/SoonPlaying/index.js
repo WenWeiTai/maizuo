@@ -62,7 +62,7 @@ class NowPlaying extends React.Component{
             return (
               <Link to='/front?' key={index}>
               <div className='ljy-List'>
-              <img src={require('@/images/img1.jpg')} alt="" />
+              <img src={item.img} alt="" />
               <div className='lyj-filmsDetails'>
                 <div className='lyj-detailsList'>
                 <div className="lyj-title">
