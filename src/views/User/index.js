@@ -19,7 +19,7 @@ class User extends Component {
       <div>
         <NavBar
           mode="light"
-          icon={<Icon type="left" />}
+          // icon={<Icon type="left" />}
           onClick={this.goback}
         >猫眼电影</NavBar>
       <div>
