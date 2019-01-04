@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './index.less';
 
-import { NavBar, Icon} from 'antd-mobile';
+import { NavBar} from 'antd-mobile';
 // import { StickyContainer, Sticky } from 'react-sticky';
 import Usera from './Usera/inde';
 class User extends Component {

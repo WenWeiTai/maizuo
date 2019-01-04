@@ -11,21 +11,28 @@ export default class Zk_Details extends Component {
   }
 
   componentWillMount() {
-    axios.get('./zk_detail.json').then((response) => {
-      console.log(response);
+    axios.get('http://10.36.140.90:4000/api/filmid/id',{
+      params: {
+        id:1240159
+      }
+    }).then((response) => {
+      console.log(response.data.data[0]);
       this.setState({
-        zk_xq:response.data.detailMovie
+        zk_xq:response.data.data[0]
       })
       // this.setState.zk_xq = response.data.detailMovie.nm;
-      console.log(this.state.zk_xq)
+      // console.log(this.state.zk_xq)
     })
+  }
+  goback=()=>{
+    this.props.history.goBack()
   }
 
   render() {
     return (
       <div>
         <div className="navbar">
-          <a href="a">《</a>
+          <a href="a" ><i onClick={this.goback.bind(this)} className="iconfont iconfont-zuojiantou"></i></a>
           <div>{ this.state.zk_xq.nm}</div>
         </div>
         <div className="movie-page">
@@ -39,12 +46,12 @@ export default class Zk_Details extends Component {
               <div className="movie-container">
                 <div className="zk_logo">
                   <a href="1">
-                    <img src={this.state.zk_xq.albumImg}alt="" />
+                    <img src={this.state.zk_xq.img}alt="" />
                   </a>
                 </div>
                 <div className="zk_text">
                   <div className="zk_reactid">{ this.state.zk_xq.nm}</div>
-                  <div className="zk_movie-ename">{ this.state.zk_xq.enm}</div>
+                  <div className="zk_movie-ename">Kill Mobile</div>
                   <div className="zk_movie-score">
                     <div className="zk_released-score">
                       <div className="zk_rating">
@@ -57,14 +64,14 @@ export default class Zk_Details extends Component {
                       </div>
                       <div className="zk_score-num">
                         <span>(</span>
-                        <span>{(this.state.zk_xq.snum/10000 ).toFixed(2)}万</span>
+                        <span>17.9万</span>
                         <span>人评分)</span>
                       </div>
                     </div>
                   </div>
-                  <div className="zk_movie-category" data-reactid=".7fg3449b50.4.0.0.2.1.3"><span className="movie-cat" data-reactid=".7fg3449b50.4.0.0.2.1.3.0">{this.state.zk_xq.cat}</span></div>
-                  <div className="zk_movie-content-row" data-reactid=".7fg3449b50.4.0.0.2.1.4"><span data-reactid=".7fg3449b50.4.0.0.2.1.4.0">{this.state.zk_xq.src}</span><span data-reactid=".7fg3449b50.4.0.0.2.1.4.1"> / </span><span data-reactid=".7fg3449b50.4.0.0.2.1.4.2"><span data-reactid=".7fg3449b50.4.0.0.2.1.4.2.0">{this.state.zk_xq.dur}</span><span data-reactid=".7fg3449b50.4.0.0.2.1.4.2.1"> 分钟</span></span><span data-reactid=".7fg3449b50.4.0.0.2.1.4.3"></span></div>
-                  <div className="zk_movie-content-row" data-reactid=".7fg3449b50.4.0.0.2.1.5">{this.state.zk_xq.pubDesc}</div>
+                  <div className="zk_movie-category" data-reactid=".7fg3449b50.4.0.0.2.1.3"><span className="movie-cat" data-reactid=".7fg3449b50.4.0.0.2.1.3.0">剧情,喜剧</span></div>
+                  <div className="zk_movie-content-row" data-reactid=".7fg3449b50.4.0.0.2.1.4"><span data-reactid=".7fg3449b50.4.0.0.2.1.4.0">中国大陆</span><span data-reactid=".7fg3449b50.4.0.0.2.1.4.1"> / </span><span data-reactid=".7fg3449b50.4.0.0.2.1.4.2"><span data-reactid=".7fg3449b50.4.0.0.2.1.4.2.0">140</span><span data-reactid=".7fg3449b50.4.0.0.2.1.4.2.1"> 分钟</span></span><span data-reactid=".7fg3449b50.4.0.0.2.1.4.3"></span></div>
+                  <div className="zk_movie-content-row" data-reactid=".7fg3449b50.4.0.0.2.1.5">2018-12-28大陆上映</div>
                 </div>
               </div>
             </div>
@@ -75,7 +82,7 @@ export default class Zk_Details extends Component {
             </a>
             <div data-event="intro" data-bid="b_y93QJ" data-view-bid="b_y93L0" data-lab="{movie_id:1240159}" className="zk_text-expander text-expander-disable-false text-expander-expand-false" data-reactid=".4uvxkaf2ra.4.1.2" data-view-sended="1">
               <div className="text-expander-content" data-reactid=".4uvxkaf2ra.4.1.2.0">
-                <p data-reactid=".4uvxkaf2ra.4.1.2.0.0">{this.state.zk_xq.dra}</p>
+                <p data-reactid=".4uvxkaf2ra.4.1.2.0.0">七位好友在聚会中玩了一个游戏，将手机交出，分享所有来电、短信、微信、甚至广告弹窗，掀开了一场啼笑皆非的情感风暴。</p>
               </div>
               <div className="zk_text-expander-button" data-reactid=".4uvxkaf2ra.4.1.2.1">
                 <i className="icon icon-chevron-down" data-reactid=".4uvxkaf2ra.4.1.2.1.0"></i>
