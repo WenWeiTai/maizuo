@@ -8,7 +8,6 @@ import { Tabs, WhiteSpace } from 'antd-mobile';
 import axios from 'axios';
 import store from '@/store';
 
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
 class LyjHome extends React.Component{
   constructor (props) {
@@ -96,16 +95,9 @@ class LyjHome extends React.Component{
 
   render() {
     return (
-      <ReactCSSTransitionGroup
-      transitionEnter={true}
-      transitionLeave={true}
-      transitionEnterTimeout={2500}
-      transitionLeaveTimeout={1500}
-      transitionName="animated"
-    >
       <Fragment>
           <LyjHeadBar></LyjHeadBar>
-        <div className="lyj-homeFilm animated fadeInLeftBig" key="amache">
+        <div className="lyj-homeFilm">
            <CityFilms tabs={this.state.tabs} curCity={this.state.curCity}></CityFilms>
 
             <div>
@@ -126,7 +118,6 @@ class LyjHome extends React.Component{
         </div>
 
       </Fragment>
-      </ReactCSSTransitionGroup>
 
     )
   }

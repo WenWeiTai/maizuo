@@ -5,7 +5,7 @@ import './index.less';
 class CityFilms extends React.Component{
   render() {
     return(
-      <div className="lyj-cityFilmList">
+      <div className="lyj-cityFilmList" >
       <div className="lyj-xzCity">
           <Link to='/city-list'>
               <span>{ this.props.curCity }</span>
@@ -30,6 +30,7 @@ class CityFilms extends React.Component{
         </Link>
       </div>
   </div>
+
 
     )
   }
