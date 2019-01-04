@@ -7,16 +7,44 @@ class front extends Component {
         super(props)
         this.state = {
             superdata: [],
+            superdataColo: [],
+            srarch:this.props.sea
         }
+
     }
+    SeAe = (sea) => {
+        let searc = [];
+        console.log(sea)
+        searc = this.state.superdataColo.filter(item => {
+            return item.nm.indexOf(sea) > -1;
+        })
+        // this.state.superdataColo.forEach((item) => {
+        //     if (item.nm.indexOf(sea) > -1 && sea !== '') {
+        //         searc.push(item)
+        //     }
+        // })
+        this.setState({
+            superdata: searc
+        })
+        // console.log(searc)
+    }
+    componentWillReceiveProps(nextProps) {
+        // console.log(nextProps);
+        this.SeAe(nextProps.sea);
+    }
+
     componentDidMount() {
         axios.get('./ss-detail/cinema.json').then((res) => {
             this.setState({
-                superdata: res.data.cinemas,
+                superdataColo: res.data.cinemas,
+                superdata: res.data.cinemas
             })
+            // console.log(this.props.sea)
         })
     }
     render() {
+        // console.log(this.props.sea)
+        // this.SeAe();
         return (
         <div className="ss-my-front">
         {/* cinema-list */}
