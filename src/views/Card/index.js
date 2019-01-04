@@ -10,6 +10,7 @@ class Card extends Component {
     this.state = {
       dataArr: ''
     }
+    this.addShop = this.addShop.bind(this);
   }
   componentWillMount () {
     // 获取仓库的islogin，false为未登录，ture为登录
@@ -25,7 +26,10 @@ class Card extends Component {
     })
   }
 
-
+  // 增加
+  addShop () {
+    
+  }
 
   render() {
     return (
@@ -49,14 +53,12 @@ class Card extends Component {
                     <span className="change-film-num">
                       <i className="reduce-film">-</i>
                       <span className="film-num">{item.num}</span>
-                      <i className="add-film">+</i>
+                      <i className="add-film" onClick={this.addShop}>+</i>
                     </span>
                   </li>
                   )
                 })
               }
-
-
             </ul>
             <div className="buy">
               <p>合计：<i>0</i>元</p>
@@ -66,7 +68,7 @@ class Card extends Component {
         </div>
         <WhiteSpace size="lg" />
         <div className='price-block'>
-          <Button type="primary">确定支付</Button>
+          <Button type="primary" onClick={()=>{this.props.history.goBack()}}>确定支付</Button>
         </div>
       </div>
     )
