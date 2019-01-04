@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom';
 import './index.less';
 import store from '@/store';
 class NowPlaying extends React.Component{
-  constructor(props) {
-    // 接收props 指向
-    super(props)
-  }
+  // constructor(props) {
+  //   super(props)
+  // }
 
 onChange(filmname,id,e) {
   // 父级是a 标签所以是阻止默认行为
@@ -43,8 +42,6 @@ onChange(filmname,id,e) {
     type: 'SET_ADD',
     obj: storeState
   })
-
-  console.log(storeState)
 
   this.props.history.push('/card');
 }

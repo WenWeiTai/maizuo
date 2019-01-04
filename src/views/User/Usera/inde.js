@@ -25,7 +25,6 @@ export default class usera extends Component {
   login () {
     // this.props.history.replace('/card')
     // return
-    var _this = this;
     if (!this.state.phone || !this.state.code) {
       Toast.info('请输入完整信息', 2);
     } else {

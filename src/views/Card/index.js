@@ -10,19 +10,55 @@ class Card extends Component {
     this.state = {
       dataArr: localStorage.getItem('shopCard') ? JSON.parse(localStorage.getItem('shopCard')) : []
     }
-    this.addShop = this.addShop.bind(this);
+
+    // 监听仓库更新
+    this.unsubscribe = store.subscribe(() => {
+      this.setState({
+        dataArr: localStorage.getItem('shopCard') ? JSON.parse(localStorage.getItem('shopCard')) : []
+      })
+    })
+
   }
   componentWillMount () {
     // 获取仓库的islogin，false为未登录，ture为登录
-    console.log(store.getState().isLogin.islogin)
     if (!store.getState().isLogin.islogin) {
       this.props.history.replace('/login')
     }
   }
 
-  // 增加
-  addShop () {
+  // 销毁监听
+  componentWillUnmount () {
+    this.unsubscribe()
+  }
 
+  // 增加
+  addShop (index) {
+
+    let storeState = store.getState().shopCard
+
+    ++storeState[index].filmNum
+
+    store.dispatch({
+      type: 'SET_ADD',
+      obj: storeState
+    })
+  }
+
+  // 减少
+  reduceShop (index) {
+    let storeState = store.getState().shopCard
+
+    --storeState[index].filmNum
+
+    // 当数量为0时，删除影片
+    if (storeState[index].filmNum === 0) {
+      storeState.splice(index, 1)
+    }
+
+    store.dispatch({
+      type: 'SET_ADD',
+      obj: storeState
+    })
   }
 
   render() {
@@ -45,9 +81,9 @@ class Card extends Component {
                     <span className="filmname">{item.filmName}</span>
                     <span className="price">￥<i>{item.filmPrice}</i></span>
                     <span className="change-film-num">
-                      <i className="reduce-film">-</i>
+                      <i className="reduce-film" onClick={this.reduceShop.bind(this, index)}>-</i>
                       <span className="film-num">{item.filmNum}</span>
-                      <i className="add-film" onClick={this.addShop}>+</i>
+                      <i className="add-film" onClick={this.addShop.bind(this, index)}>+</i>
                     </span>
                   </li>
                   )
@@ -68,6 +104,5 @@ class Card extends Component {
     )
   }
 }
-
 
 export default Card;
