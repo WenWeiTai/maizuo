@@ -1,10 +1,20 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './index.less';
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+
 class FootBar extends React.Component{
   render(){
     return (
-          <ul className="ljy-footBar">
+      <ReactCSSTransitionGroup
+      transitionEnter={true}
+      transitionLeave={true}
+      transitionEnterTimeout={2500}
+      transitionLeaveTimeout={1500}
+      transitionName="animated"
+    >
+
+          <ul className="ljy-footBar animated fadeInLeftBig" key="amache">
              {
               this.props.tabs.map( item => {
                 return (
@@ -21,6 +31,8 @@ class FootBar extends React.Component{
               })
             }
           </ul>
+          </ReactCSSTransitionGroup>
+
     )
   }
 }

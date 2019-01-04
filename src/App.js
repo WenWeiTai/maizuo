@@ -11,6 +11,7 @@ import Login from './views/User';
 import Register from './views/register/index.js';
 import Home from './views/Home';
 
+import "animate.css";
 
 class App extends React.Component {
 
@@ -42,6 +43,7 @@ class App extends React.Component {
           <Route path="/" component={ Home }></Route>
         </Switch>
       </Router>
+
     )
   }
 }
