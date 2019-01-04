@@ -4,6 +4,7 @@ import { List, InputItem, Button, Toast } from 'antd-mobile';
 import './index.less';
 import Userb from './Userab';
 import axios from 'axios';
+import store from '@/store';
 
 export default class usera extends Component {
   constructor(props) {
@@ -22,10 +23,12 @@ export default class usera extends Component {
   }
 
   login () {
+    // this.props.history.replace('/card')
+    // return
+    var _this = this;
     if (!this.state.phone || !this.state.code) {
       Toast.info('请输入完整信息', 2);
     } else {
-      // 登录成功
       axios.post('http://10.36.140.90:4000/api/user/login',{
         params: {
           phone: this.state.phone,
@@ -36,8 +39,17 @@ export default class usera extends Component {
 
 
         if (res.data.code === 0) {
+          // 登录成功
           Toast.info(res.data.msg, 3);
-          // this.props.history.replace('/login');
+          // 将登录成功的状态存到localStorage
+          localStorage.setItem('islogin',true)
+          // 修改仓库的登录状态
+          store.dispatch({
+            type: 'SET_LOGIN',
+            name: true
+          })
+
+          this.props.history.replace('/card');
         } else {
           Toast.info(res.data.msg, 2);
         }

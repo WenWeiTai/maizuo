@@ -5,8 +5,8 @@ import { NavBar, Icon} from 'antd-mobile';
 // import { StickyContainer, Sticky } from 'react-sticky';
 import Usera from './Usera/inde';
 class User extends Component {
-  constructor () {
-    super ()
+  constructor (props) {
+    super (props)
     this.goback = this.goback.bind(this);
   }
 
@@ -24,7 +24,7 @@ class User extends Component {
         >猫眼电影</NavBar>
       <div>
       </div>
-      <Usera></Usera>
+      <Usera {...this.props}></Usera>
       </div>
     )
   }
