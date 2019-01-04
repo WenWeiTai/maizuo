@@ -2,6 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './index.less';
 class NowPlaying extends React.Component{
+  constructor(props) {
+    // 接收props 指向
+    super(props);
+    this.onChange = this.onChange.bind(this);
+  }
+
+onChange(e) {
+  // 父级是a 标签所以是阻止默认行为
+  e.preventDefault();
+  this.props.history.push('/card');
+}
+
   render() {
     return (
       <div className="lyj-cityList">
@@ -29,7 +41,8 @@ class NowPlaying extends React.Component{
                 </div>
 
                 <div className='lyj-gouPiao'>
-                  <div className="gouPiao" onClick={this.onChange}>购票</div>
+                {/* 父级是a 标签所以是阻止默认行为 */}
+                  <div className="gouPiao" onClick={(e)=>this.onChange(e)}>购票</div>
                 </div>
               </div>
 
