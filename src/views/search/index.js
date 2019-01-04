@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './index.less'
 import {NavLink} from 'react-router-dom'
 import axios from 'axios'
+import { Toast } from 'antd-mobile'
 export default class index extends Component {
   constructor (props) {
     super(props);
@@ -14,11 +15,15 @@ export default class index extends Component {
   gotoNext(){
     this.props.history.goBack()
   }
+  tipS() {
+    Toast.loading('Loading',1.5)
+  }
   componentDidMount () {
-    axios.get('http://10.36.140.90:4000/api/film/list')
+    this.tipS();
+    axios.get('./sy.json')
     .then(res=>{
-      this.setState({Moveval:res.data.data.film})
-     // console.log(this.state.Moveval);
+      this.setState({Moveval:res.data})
+     // console.log(this.state.Movevalat);
     })
   }
   SeAe = (sea) => {
@@ -27,11 +32,6 @@ export default class index extends Component {
     searc = this.state.Moveval.filter(item => {
         return item.nm.indexOf(sea) > -1;
     })
-    // this.state.superdataColo.forEach((item) => {
-    //     if (item.nm.indexOf(sea) > -1 && sea !== '') {
-    //         searc.push(item)
-    //     }
-    // })
     this.setState({
       useData: searc
     })
@@ -43,6 +43,7 @@ export default class index extends Component {
   }
   onDelte () {
     this.refs.xxx.value = ''
+    this.state.iptval = ''
   }
   render() {
     return (
@@ -56,7 +57,7 @@ export default class index extends Component {
             <div className="ipt-wrapper">
               <i className="iconhead iconfont iconfont-magnifier"></i>
               <input type="text" className="search-ipt" onChange={this.onChange.bind(this)} placeholder="搜电影、搜影院" ref="xxx"/>
-              <div className="icon-rex" onClick={this.onDelte.bind(this)}>
+              <div className={this.state.iptval === ''? "haha":"icon-rex"} onClick={this.onDelte.bind(this)}>
                 <i className="iconfoot iconfont iconfont-del2"></i>
               </div>
             </div>
