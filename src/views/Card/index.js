@@ -2,8 +2,17 @@ import React, { Component } from 'react'
 import Header from '@/components/wwt-Hearder'
 import { Button, WhiteSpace } from 'antd-mobile';
 import './index.less';
+import store from '@/store'
 
-export default class Card extends Component {
+class Card extends Component {
+  componentWillMount () {
+    // 获取仓库的islogin，false为未登录，ture为登录
+    console.log(store.getState().isLogin.islogin)
+    if (!store.getState().isLogin.islogin) {
+      this.props.history.replace('/login')
+    }
+  }
+
   render() {
     return (
       <div className='card'>
@@ -50,3 +59,6 @@ export default class Card extends Component {
     )
   }
 }
+
+
+export default Card;
