@@ -1,15 +1,25 @@
 import React, { Component } from 'react';
 import './index.less';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import CinemaList from '@/components/CinemaList/index.js'
+import http from '../../rxdserver.js';
 
 class front extends Component {
     constructor(props) {
         super(props)
         this.state = {
             newdata: {},
-            superdata: [],
-            date:[]
+            date: [],
+            change: 0,
+            daTou: ''
         }
+    }
+    handleChange(i) {
+        console.log(i.index)
+        this.setState({
+            change: i.index
+        })
     }
     componentDidMount() {
         axios.get('./ss-detail/phone.json').then((res) => {
@@ -19,8 +29,17 @@ class front extends Component {
         })
         axios.get('./ss-detail/cinema.json').then((res) => {
             this.setState({
-                superdata: res.data.cinemas,
                 date: res.data.showDays.dates
+            })
+        })
+        http.get('http://10.36.140.90:4000/api/filmid/id', {
+            params: {
+              id:1206875
+            }
+          }).then((res) => {
+            console.log(res)
+            this.setState({
+                daTou: res
             })
         })
     }
@@ -30,11 +49,14 @@ class front extends Component {
         {/* header */}
             <header className="navbarr">
             <div className="nav-wrap-left">
-                <i className="icon-back"></i>
+                <Link to="/films">
+                    <i className="icon-back"></i>
+                </Link>
             </div>
             <p className="nav-headerr">{this.state.newdata.nm}</p>
             </header>
         {/* detail */}
+        <Link to="/detail">
             <div className="detail box-flex">
             <div className="poster">
                 <img alt="" src="//p1.meituan.net/148.208/movie/a596474c1c29118d908d1eff0fd4293f1017066.jpg" />
@@ -58,13 +80,14 @@ class front extends Component {
                 <img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAWCAYAAAAfD8YZAAAAAXNSR0IArs4c6QAAAS5JREFUOBGVkktuwkAMhpOoJ+hhSouE2HbDgiVCNCAOVtQHnINHhbgMJ6g6/f9gR848kmDJeOzxZ3scskzEOfcKXUMLjXXZByYQhJlqMvz3PM//1E9Z7fJoEp5wXvWZoILRZQtg7xVYdhXQzuR2XoEB/NYCOSkVdKI/g441BnuBbmI7aMAE7ilgxyaboYOD4RMO9EWiTwhgJksBLtEvUNolRmGvwJG+yDNsXSB4s2aplR3M4Y80BnuGfiQ7m0Q2qP6JJvaLc/VpTKx5lPe9IfpibviMb+4lOXYXyGLRsRPgSTsSpASdW8Av+YQ3Er+NzgIuELdvZMcAZIUaBsgpCA55IZIEeV+NLSC32hskXCTAH9xFRyWkUsgSrhqAJfjpL8fch0dMMIGWMkmYEIn8Az5Wgp5LHlhmAAAAAElFTkSuQmCC"/>
             </div>
             </div>
+        </Link>
         {/* showDays */}
         <div id="showDays">
             <ul id="timeline" className="mb-line-b">
             {
                 this.state.date.map((item,index) => {
                     return (
-                        <li data-day={item.date} className="showDay chosen" key={index}>
+                        <li data-day={item.date} id="showDay" className={ index===this.state.change?"chosen":null} onClick={this.handleChange.bind(this,{index})} key={index}>
                                 {item.date}
                         </li>
                     )
@@ -80,46 +103,7 @@ class front extends Component {
                     <div className="item" data-tab=".special">特色<span className="drop"></span></div>
             </div>
             </div>
-        {/* cinema-list */}
-            <div className="cinema-list cinema" data-id="1206875" data-date="2019-01-03" >
-                <div className="list-wrap">
-                {
-                    this.state.superdata.map((item,index) => {
-                        return (
-                            <div className="item mb-line-b" data-id="15406" data-bid="dp_wx_home_cinema_list" key = {index}>
-                                <div className="title-block box-flex middle">
-                                    <div className="title line-ellipsis">
-                                        <span>{item.nm}</span>
-                                        <span className="price-blockk">
-                                            <span className="price">{item.sellPrice}</span><span className="q">元起</span>
-                                        </span>
-                                    </div>
-                                    <div className="location-block box-flex">
-                                        <div className="flex line-ellipsis">{item.addr}</div>
-                                        <div className="distance">{item.distance}</div>
-                                    </div>
-                                    <div className="flex"></div>
-                                    <div className="label-block">
-                                        <div className="vipTag">{item.tag.vipTag}</div>
-                                    </div>
-                                    <div className="discount-block">
-                                        <div className="discount-label normal card">
-                                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAeCAYAAABNChwpAAAAAXNSR0IArs4c6QAAAgFJREFUSA3Nlz1LA0EQhmf3kouFEQwi+FEYQ+xEsImFoCDoL/CLaKd/QbC0sbCzFVuxsRS1jEVAsUqrIILRQAhaBGKMuawzwpGAm83mNhddCHfZnd3n3Z2ZuxsG2JI3YtQpVw6AiTkhYJj6/GqMwSsIdm312DsnMyzLCF79rGRAiIhfUOm6jL0FQvZU4Gfn0GU4KcINE5vjsc9LFXajE9kcfT7UDZaMQWwuG9Dpi/YyiIWZjqnSxrOAtWgANsYDysV1Bj0L0Flcx8ZoC1F0wf50UMo5fqjCY1FIxxo7jQSUHWgK+ag2YprfGwnIlQTQTk3a/46B2UEOIUu+v0gIIMgZLLTIZHJTOl+TL4K9ShckMc36Q+pc356QB6FLLJQFCqi4f39d2WoKLTy03ckg2OjAvcyXh9n1KX8eA0YC4n0MtuLoJru+o3bvjAS8o2vpfXCYsGEzZkFYHQ5SbcoglM5o6KQAoxhIDHBYiVqYERZcZB04f3aghNGv04wEuIDbQg3u8Lc4YsHymAVLeD17cuDypbWKjgggIZTpVwhM5x1YxzdlpaaXXB0T4J5GEbPy6F7/8WwUhC7U5OpZgIPfU5qnrNTn+UmoXLWNQc8n0AZDacqxUskpLXwcJDbHMinlI0O9NLI51WiAZZLa0odRZBKbU4FINRoDdtoNdxCDWMQk9jePWpE8hVOLbwAAAABJRU5ErkJggg==" alt=""/>
-                                        </div>
-                                        <div className="discount-label-text">23213{item.promotion.cardPromotionTag}</div>
-                                    </div>
-                                    <div className="min-show-block  disabled  J-fload" data-bid="dp_wx_buy_cinema_list_spread">
-                                        <span>近期场次：</span>
-                                        <span className="time-line">{item.showTimes}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        )
-                    })
-                }
-                </div>
-            </div>
-        {/*  */}
+            <CinemaList></CinemaList>
         </div>
         );
     }
