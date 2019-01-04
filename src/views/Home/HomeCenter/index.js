@@ -7,12 +7,23 @@ import Header from '@/components/wwt-Hearder';
 import { NavLink } from 'react-router-dom';
 
 class Center extends Component {
+  constructor () {
+    super ()
+    this.state = {
+      username: ''
+    }
+  }
+  componentWillMount () {
+    this.setState({
+      username: localStorage.getItem('islogin') ? '已登录' : '未登录'
+    })
+  }
   render() {
     return (
       <div className="my-center">
         <Header title='我的'></Header>
         <div className='user'>
-          <img alt=""/>
+          <h1 className='username'>{ this.state.username }</h1>
         </div>
         <div className='container'>
           <div className='group'>

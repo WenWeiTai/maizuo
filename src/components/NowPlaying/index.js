@@ -1,16 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './index.less';
+import store from '@/store';
 class NowPlaying extends React.Component{
   constructor(props) {
     // 接收props 指向
-    super(props);
-    this.onChange = this.onChange.bind(this);
+    super(props)
   }
 
-onChange(e) {
+onChange(filmname,e) {
   // 父级是a 标签所以是阻止默认行为
   e.preventDefault();
+  // 将点击的数据添加到store
+  console.log(filmname,parseInt(30 + Math.random() * 60),1)
+  var data = { name: filmname, price: parseInt(30 + Math.random() * 60), num: 1 }
+  store.dispatch({
+    type: 'SET_ADD',
+    obj: data
+  })
+
+  // 存到localStorage
+  localStorage.setItem('data', JSON.stringify(data))
+
   this.props.history.push('/card');
 }
 
@@ -42,7 +53,7 @@ onChange(e) {
 
                 <div className='lyj-gouPiao'>
                 {/* 父级是a 标签所以是阻止默认行为 */}
-                  <div className="gouPiao" onClick={(e)=>this.onChange(e)}>购票</div>
+                  <div className="gouPiao" onClick={this.onChange.bind(this,item.nm)}>购票</div>
                 </div>
               </div>
 
