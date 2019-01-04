@@ -8,24 +8,60 @@ class Card extends Component {
   constructor () {
     super ()
     this.state = {
-      dataArr: ''
+      dataArr: localStorage.getItem('shopCard') ? JSON.parse(localStorage.getItem('shopCard')) : [],
+      total: 0,
+      num: 0
     }
+
+    // 监听仓库更新
+    this.unsubscribe = store.subscribe(() => {
+      this.setState({
+        dataArr: localStorage.getItem('shopCard') ? JSON.parse(localStorage.getItem('shopCard')) : []
+      })
+    })
+
   }
   componentWillMount () {
     // 获取仓库的islogin，false为未登录，ture为登录
-    console.log(store.getState().isLogin.islogin)
     if (!store.getState().isLogin.islogin) {
       this.props.history.replace('/login')
     }
+  }
 
-    let arr = store.getState().shopCard;
-    console.log(arr);
-    this.setState({
-      dataArr: arr
+  // 销毁监听
+  componentWillUnmount () {
+    this.unsubscribe()
+  }
+
+  // 增加
+  addShop (index) {
+
+    let storeState = store.getState().shopCard
+
+    ++storeState[index].filmNum
+
+    store.dispatch({
+      type: 'SET_ADD',
+      obj: storeState
     })
   }
 
+  // 减少
+  reduceShop (index) {
+    let storeState = store.getState().shopCard
 
+    --storeState[index].filmNum
+
+    // 当数量为0时，删除影片
+    if (storeState[index].filmNum === 0) {
+      storeState.splice(index, 1)
+    }
+
+    store.dispatch({
+      type: 'SET_ADD',
+      obj: storeState
+    })
+  }
 
   render() {
     return (
@@ -44,34 +80,30 @@ class Card extends Component {
                 this.state.dataArr.map( (item, index) => {
                   return (
                   <li key={index}>
-                    <span className="filmname">{item.name}</span>
-                    <span className="price">￥<i>{item.price}</i></span>
+                    <span className="filmname">{item.filmName}</span>
+                    <span className="price">￥<i>{item.filmPrice}</i></span>
                     <span className="change-film-num">
-                      <i className="reduce-film">-</i>
-                      <span className="film-num">{item.num}</span>
-                      <i className="add-film">+</i>
+                      <i className="reduce-film" onClick={this.reduceShop.bind(this, index)}>-</i>
+                      <span className="film-num">{item.filmNum}</span>
+                      <i className="add-film" onClick={this.addShop.bind(this, index)}>+</i>
                     </span>
                   </li>
                   )
                 })
               }
-
-
             </ul>
             <div className="buy">
-              <p>合计：<i>0</i>元</p>
-              <p>结算</p>
+              <p>合计：<i>{ this.state.total }</i>元</p>
             </div>
           </div>
         </div>
         <WhiteSpace size="lg" />
         <div className='price-block'>
-          <Button type="primary">确定支付</Button>
+          <Button type="primary" onClick={()=>{this.props.history.goBack()}}>确定支付</Button>
         </div>
       </div>
     )
   }
 }
-
 
 export default Card;
