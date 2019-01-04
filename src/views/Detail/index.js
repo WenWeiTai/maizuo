@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './index.less'
 import axios from 'axios'
+import { Link } from 'react-router-dom';
 
 export default class Zk_Details extends Component {
   constructor(props) {
@@ -11,9 +12,10 @@ export default class Zk_Details extends Component {
   }
 
   componentWillMount() {
+    let Idd=this.props.location.search.split('?')[1]
     axios.get('http://10.36.140.90:4000/api/filmid/id',{
       params: {
-        id:1240159
+        id:Idd
       }
     }).then((response) => {
       console.log(response.data.data[0]);
@@ -32,15 +34,16 @@ export default class Zk_Details extends Component {
     return (
       <div>
         <div className="navbar">
-          <a href="a" ><i onClick={this.goback.bind(this)} className="iconfont iconfont-zuojiantou"></i></a>
+          <Link to={`/front?${this.props.location.search.split('?')[1]}`}><i className="iconfont iconfont-zuojiantou"></i></Link>
           <div>{ this.state.zk_xq.nm}</div>
         </div>
         <div className="movie-page">
           <section className="movie-header">
             <div className="movie">
-              {/* <div class="movie-background" style={background-image:url(http://p1.meituan.net/177.249/movie/a596474c1c29118d908d1eff0fd4293f1017066.jpg);}data-reactid=".16dqbxfag38.4.0.0.0"></div> */}
+            <div className="movie-background" style={{
+              backgroundImage:`url(${this.state.zk_xq.img})`
+            }} data-reactid=".232835nktzi.4.0.0.0"></div>
               <div className="movie-background"></div>
-              {/* <div className="movie-background" style="background-image:url(http://p1.meituan.net/177.249/movie/a596474c1c29118d908d1eff0fd4293f1017066.jpg);" data-reactid=".7fg3449b50.4.0.0.0"></div> */}
               <div className="movie-filter" data-reactid=".1j067h1tq6u.4.0.0.1"></div>
 
               <div className="movie-container">
