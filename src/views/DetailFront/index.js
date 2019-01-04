@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './index.less';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class front extends Component {
     constructor(props) {
@@ -30,7 +31,9 @@ class front extends Component {
         {/* header */}
             <header className="navbarr">
             <div className="nav-wrap-left">
-                <i className="icon-back"></i>
+                <Link to="/films">
+                    <i className="icon-back"></i>
+                </Link>
             </div>
             <p className="nav-headerr">{this.state.newdata.nm}</p>
             </header>
@@ -100,7 +103,50 @@ class front extends Component {
                                     </div>
                                     <div className="flex"></div>
                                     <div className="label-block">
-                                        <div className="vipTag">{item.tag.vipTag}</div>
+                                    {
+                                        Object.keys(item.tag).map(keys => {
+                                            if(keys === 'allowRefund') {
+                                                if(item.tag[keys] !== 0){
+                                                    return (<div key="1" className={keys} >退</div>)
+                                                }
+                                            }
+                                            else if(keys === 'buyout') {
+                                                if(item.tag[keys] !== 0){
+                                                    return (<div key="1" className={keys} >买</div>)
+                                                }
+                                            }
+                                            else if(keys === 'cityCardTag') {
+                                                if(item.tag[keys] !== 0){
+                                                    return (<div key="1" className={keys} >信用卡</div>)
+                                                }
+                                            }
+                                            else if(keys === 'deal') {
+                                                if(item.tag[keys] !== 0){
+                                                    return (<div key="1" className={keys} >退</div>)
+                                                }
+                                            }
+                                            else if(keys === 'endorse') {
+                                                if(item.tag[keys] !== 0){
+                                                    return (<div key="1" className={keys} >改签</div>)
+                                                }
+                                            }
+                                            else if(keys === 'hallType') {
+                                                if(item.tag[keys] !== []) {
+                                                    return (<div key="1" className={keys}>{item.tag[keys]}</div>)
+                                                }
+                                            }
+                                            else if(keys === 'vipTag') {
+                                                if(item.tag[keys] !== []) {
+                                                    return (<div key="1" className={keys}>折扣卡</div>)
+                                                }
+                                            }
+                                            else if(keys === 'snack') {
+                                                if(item.tag[keys] !== []) {
+                                                    return (<div key="1" className={keys}>小吃</div>)
+                                                }
+                                            }
+                                        })
+                                    }
                                     </div>
                                     <div className="discount-block">
                                         <div className="discount-label normal card">
