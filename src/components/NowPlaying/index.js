@@ -8,7 +8,7 @@ class NowPlaying extends React.Component{
       {
         this.props.films.map((item,index) => {
             return (
-              <Link to='/front?' key={index}>
+              <Link to={`/front?${item.id}`} key={index}>
               <div className='ljy-List'>
               <img src={item.img} alt="" />
               <div className='lyj-filmsDetails'>
