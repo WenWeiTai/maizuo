@@ -8,19 +8,43 @@ class NowPlaying extends React.Component{
     super(props)
   }
 
-onChange(filmname,e) {
+onChange(filmname,id,e) {
   // 父级是a 标签所以是阻止默认行为
   e.preventDefault();
-  // 将点击的数据添加到store
-  console.log(filmname,parseInt(30 + Math.random() * 60),1)
-  var data = { name: filmname, price: parseInt(30 + Math.random() * 60), num: 1 }
-  store.dispatch({
-    type: 'SET_ADD',
-    obj: data
+
+  let storeState = store.getState().shopCard;
+
+  let index = -1;
+
+  // 判断仓库是否存在相同影片id的数据
+  let hasId = storeState.some((item, i) => {
+    if (id === item.filmId) {
+      // 相同则保存下标
+      index = i;
+      return true;
+    } else {
+      return false;
+    }
   })
 
-  // 存到localStorage
-  localStorage.setItem('data', JSON.stringify(data))
+  if (hasId) {
+    storeState[index].filmNum++
+  } else {
+    let obj = {
+      filmId: id,
+      filmName: filmname,
+      filmPrice: parseInt(30 + Math.random() * 60),
+      filmNum: 1
+    }
+    storeState = [...storeState,obj]
+  }
+
+  store.dispatch({
+    type: 'SET_ADD',
+    obj: storeState
+  })
+
+  console.log(storeState)
 
   this.props.history.push('/card');
 }
@@ -53,7 +77,7 @@ onChange(filmname,e) {
 
                 <div className='lyj-gouPiao'>
                 {/* 父级是a 标签所以是阻止默认行为 */}
-                  <div className="gouPiao" onClick={this.onChange.bind(this,item.nm)}>购票</div>
+                  <div className="gouPiao" onClick={this.onChange.bind(this,item.nm, item.id)}>购票</div>
                 </div>
               </div>
 

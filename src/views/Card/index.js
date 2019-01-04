@@ -8,7 +8,7 @@ class Card extends Component {
   constructor () {
     super ()
     this.state = {
-      dataArr: ''
+      dataArr: localStorage.getItem('shopCard') ? JSON.parse(localStorage.getItem('shopCard')) : []
     }
     this.addShop = this.addShop.bind(this);
   }
@@ -18,17 +18,11 @@ class Card extends Component {
     if (!store.getState().isLogin.islogin) {
       this.props.history.replace('/login')
     }
-
-    let arr = store.getState().shopCard;
-    console.log(arr);
-    this.setState({
-      dataArr: arr
-    })
   }
 
   // 增加
   addShop () {
-    
+
   }
 
   render() {
@@ -48,11 +42,11 @@ class Card extends Component {
                 this.state.dataArr.map( (item, index) => {
                   return (
                   <li key={index}>
-                    <span className="filmname">{item.name}</span>
-                    <span className="price">￥<i>{item.price}</i></span>
+                    <span className="filmname">{item.filmName}</span>
+                    <span className="price">￥<i>{item.filmPrice}</i></span>
                     <span className="change-film-num">
                       <i className="reduce-film">-</i>
-                      <span className="film-num">{item.num}</span>
+                      <span className="film-num">{item.filmNum}</span>
                       <i className="add-film" onClick={this.addShop}>+</i>
                     </span>
                   </li>
