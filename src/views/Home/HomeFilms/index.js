@@ -1,12 +1,13 @@
 import React,{ Fragment } from 'react';
-import { Link } from 'react-router-dom';
 import './index.less';
 import LyjHeadBar from '@/components/HeadBar';
 import NowPlaying from '@/components/NowPlaying';
 import SoonPlaying from '@/components/SoonPlaying';
+import CityFilms from '@/components/CityFilms';
 import { Tabs, WhiteSpace } from 'antd-mobile';
 import axios from 'axios';
 import store from '@/store';
+
 
 class LyjHome extends React.Component{
   constructor (props) {
@@ -95,36 +96,13 @@ class LyjHome extends React.Component{
   render() {
     return (
       <Fragment>
-        <LyjHeadBar></LyjHeadBar>
+          <LyjHeadBar></LyjHeadBar>
         <div className="lyj-homeFilm">
-            <div className="lyj-cityFilmList">
-                <div className="lyj-xzCity">
-                    <Link to='/city-list'>
-                        <span>{ this.state.curCity }</span>
-                        <i className="iconfont iconfont-arr_D"></i>
-                    </Link>
-                </div>
-                <div className="lyj-filmsList">
-                  <ul>
-                    {
-                      this.state.tabs.map((item,index) => {
-                        return (
-                          <li key={index}>{item.title}</li>
-                          )
-                      })
-                    }
-                        {/* <li>即将上映</li> */}
-                  </ul>
-                </div>
-                <div className='lyj-filmsSearch'>
-                  <Link to='/search?filmId'>
-                      <i className="iconfont iconfont-magnifier"></i>
-                  </Link>
-                </div>
-            </div>
+           <CityFilms tabs={this.state.tabs} curCity={this.state.curCity}></CityFilms>
+
             <div>
                 <WhiteSpace />
-                <Tabs tabs={this.state.tabs} initialPage={0} animated={false} useOnPan={false}>
+                <Tabs tabs={this.state.tabs} initialPage={0} animated={false} useOnPan={false} swipeable={false}>
 
                   <div style={{ alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff' }}>
                      {/* 传递组件的props 过去 */}
@@ -138,7 +116,9 @@ class LyjHome extends React.Component{
               </div>
             <p className="p4" onClick={this.loadMore}>{this.state.loadMoreText}</p>
         </div>
+
       </Fragment>
+
     )
   }
 }

@@ -11,7 +11,6 @@ import Login from './views/User';
 import Register from './views/register/index.js';
 import Home from './views/Home';
 
-
 class App extends React.Component {
 
   // 百度定位当前城市
@@ -42,6 +41,7 @@ class App extends React.Component {
           <Route path="/" component={ Home }></Route>
         </Switch>
       </Router>
+
     )
   }
 }

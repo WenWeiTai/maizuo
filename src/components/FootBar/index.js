@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './index.less';
+
 class FootBar extends React.Component{
   render(){
     return (
@@ -21,6 +22,7 @@ class FootBar extends React.Component{
               })
             }
           </ul>
+
     )
   }
 }

@@ -11,7 +11,6 @@
 
 "@babel/core@7.1.0":
   version "7.1.0"
-  resolved "http://registry.npm.taobao.org/@babel/core/download/@babel/core-7.1.0.tgz#08958f1371179f62df6966d8a614003d11faeb04"
   resolved "http://r.cnpmjs.org/@babel/core/download/@babel/core-7.1.0.tgz#08958f1371179f62df6966d8a614003d11faeb04"
   integrity sha1-CJWPE3EXn2LfaWbYphQAPRH66wQ=
   dependencies:
@@ -270,7 +269,6 @@
 
 "@babel/plugin-proposal-decorators@7.1.2":
   version "7.1.2"
-  resolved "http://registry.npm.taobao.org/@babel/plugin-proposal-decorators/download/@babel/plugin-proposal-decorators-7.1.2.tgz#79829bd75fced6581ec6c7ab1930e8d738e892e7"
   resolved "http://r.cnpmjs.org/@babel/plugin-proposal-decorators/download/@babel/plugin-proposal-decorators-7.1.2.tgz#79829bd75fced6581ec6c7ab1930e8d738e892e7"
   integrity sha1-eYKb11/O1lgexserGTDo1zjokuc=
   dependencies:
@@ -458,7 +456,6 @@
 
 "@babel/plugin-transform-destructuring@7.0.0":
   version "7.0.0"
-  resolved "http://registry.npm.taobao.org/@babel/plugin-transform-destructuring/download/@babel/plugin-transform-destructuring-7.0.0.tgz#68e911e1935dda2f06b6ccbbf184ffb024e9d43a"
   resolved "http://r.cnpmjs.org/@babel/plugin-transform-destructuring/download/@babel/plugin-transform-destructuring-7.0.0.tgz#68e911e1935dda2f06b6ccbbf184ffb024e9d43a"
   integrity sha1-aOkR4ZNd2i8Gtsy78YT/sCTp1Do=
   dependencies:
@@ -497,7 +494,6 @@
 
 "@babel/plugin-transform-flow-strip-types@7.0.0":
   version "7.0.0"
-  resolved "http://registry.npm.taobao.org/@babel/plugin-transform-flow-strip-types/download/@babel/plugin-transform-flow-strip-types-7.0.0.tgz#c40ced34c2783985d90d9f9ac77a13e6fb396a01"
   resolved "http://r.cnpmjs.org/@babel/plugin-transform-flow-strip-types/download/@babel/plugin-transform-flow-strip-types-7.0.0.tgz#c40ced34c2783985d90d9f9ac77a13e6fb396a01"
   integrity sha1-xAztNMJ4OYXZDZ+ax3oT5vs5agE=
   dependencies:
@@ -711,7 +707,6 @@
 
 "@babel/preset-env@7.1.0":
   version "7.1.0"
-  resolved "http://registry.npm.taobao.org/@babel/preset-env/download/@babel/preset-env-7.1.0.tgz#e67ea5b0441cfeab1d6f41e9b5c79798800e8d11"
   resolved "http://r.cnpmjs.org/@babel/preset-env/download/@babel/preset-env-7.1.0.tgz#e67ea5b0441cfeab1d6f41e9b5c79798800e8d11"
   integrity sha1-5n6lsEQc/qsdb0HptceXmIAOjRE=
   dependencies:
@@ -825,16 +820,12 @@
 
 "@babel/runtime@7.0.0":
   version "7.0.0"
-<<<<<<< HEAD
-  resolved "http://registry.npm.taobao.org/@babel/runtime/download/@babel/runtime-7.0.0.tgz#adeb78fedfc855aa05bc041640f3f6f98e85424c"
-=======
   resolved "http://r.cnpmjs.org/@babel/runtime/download/@babel/runtime-7.0.0.tgz#adeb78fedfc855aa05bc041640f3f6f98e85424c"
->>>>>>> 849c5a2b806875b176a9d40bcbe265cbf6488f68
   integrity sha1-ret4/t/IVaoFvAQWQPP2+Y6FQkw=
   dependencies:
     regenerator-runtime "^0.12.0"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.2.0":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.2.0":
   version "7.2.0"
   resolved "http://r.cnpmjs.org/@babel/runtime/download/@babel/runtime-7.2.0.tgz#b03e42eeddf5898e00646e4c840fa07ba8dcad7f"
   integrity sha1-sD5C7t31iY4AZG5MhA+ge6jcrX8=
@@ -1142,7 +1133,6 @@ acorn@^5.0.0, acorn@^5.5.3, acorn@^5.6.2:
 
 acorn@^6.0.1, acorn@^6.0.2, acorn@^6.0.4:
   version "6.0.5"
-  resolved "http://registry.npm.taobao.org/acorn/download/acorn-6.0.5.tgz#81730c0815f3f3b34d8efa95cb7430965f4d887a"
   resolved "http://r.cnpmjs.org/acorn/download/acorn-6.0.5.tgz#81730c0815f3f3b34d8efa95cb7430965f4d887a"
   integrity sha1-gXMMCBXz87NNjvqVy3Qwll9NiHo=
 
@@ -1196,6 +1186,11 @@ alphanum-sort@^1.0.0:
   version "1.0.2"
   resolved "http://r.cnpmjs.org/alphanum-sort/download/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
+
+animate.css@^3.7.0:
+  version "3.7.0"
+  resolved "http://registry.npm.taobao.org/animate.css/download/animate.css-3.7.0.tgz#5de25d1ee5fba11ba6a1e2c4fa568f512eb7d4da"
+  integrity sha1-XeJdHuX7oRumoeLE+laPUS631No=
 
 ansi-align@^2.0.0:
   version "2.0.0"
@@ -1512,7 +1507,6 @@ atob@^2.1.1:
 
 autoprefixer@^9.1.5:
   version "9.4.3"
-  resolved "http://registry.npm.taobao.org/autoprefixer/download/autoprefixer-9.4.3.tgz#c97384a8fd80477b78049163a91bbc725d9c41d9"
   resolved "http://r.cnpmjs.org/autoprefixer/download/autoprefixer-9.4.3.tgz#c97384a8fd80477b78049163a91bbc725d9c41d9"
   integrity sha1-yXOEqP2AR3t4BJFjqRu8cl2cQdk=
   dependencies:
@@ -1535,7 +1529,6 @@ aws4@^1.8.0:
 
 axios@^0.18.0:
   version "0.18.0"
-  resolved "http://registry.npm.taobao.org/axios/download/axios-0.18.0.tgz#32d53e4851efdc0a11993b6cd000789d70c05102"
   resolved "http://r.cnpmjs.org/axios/download/axios-0.18.0.tgz#32d53e4851efdc0a11993b6cd000789d70c05102"
   integrity sha1-MtU+SFHv3AoRmTts0AB4nXDAUQI=
   dependencies:
@@ -1694,11 +1687,7 @@ babel-plugin-macros@2.4.2:
 
 babel-plugin-named-asset-import@^0.2.3:
   version "0.2.3"
-<<<<<<< HEAD
-  resolved "http://registry.npm.taobao.org/babel-plugin-named-asset-import/download/babel-plugin-named-asset-import-0.2.3.tgz#b40ed50a848e7bb0a2a7e34d990d1f9d46fe9b38"
-=======
   resolved "http://r.cnpmjs.org/babel-plugin-named-asset-import/download/babel-plugin-named-asset-import-0.2.3.tgz#b40ed50a848e7bb0a2a7e34d990d1f9d46fe9b38"
->>>>>>> 849c5a2b806875b176a9d40bcbe265cbf6488f68
   integrity sha1-tA7VCoSOe7Cip+NNmQ0fnUb+mzg=
 
 babel-plugin-syntax-object-rest-spread@^6.13.0, babel-plugin-syntax-object-rest-spread@^6.8.0:
@@ -1716,11 +1705,7 @@ babel-plugin-transform-object-rest-spread@^6.26.0:
 
 babel-plugin-transform-react-remove-prop-types@0.4.18:
   version "0.4.18"
-<<<<<<< HEAD
-  resolved "http://registry.npm.taobao.org/babel-plugin-transform-react-remove-prop-types/download/babel-plugin-transform-react-remove-prop-types-0.4.18.tgz#85ff79d66047b34288c6f7cc986b8854ab384f8c"
-=======
   resolved "http://r.cnpmjs.org/babel-plugin-transform-react-remove-prop-types/download/babel-plugin-transform-react-remove-prop-types-0.4.18.tgz#85ff79d66047b34288c6f7cc986b8854ab384f8c"
->>>>>>> 849c5a2b806875b176a9d40bcbe265cbf6488f68
   integrity sha1-hf951mBHs0KIxvfMmGuIVKs4T4w=
 
 babel-preset-jest@^23.2.0:
@@ -1733,11 +1718,7 @@ babel-preset-jest@^23.2.0:
 
 babel-preset-react-app@^6.1.0:
   version "6.1.0"
-<<<<<<< HEAD
-  resolved "http://registry.npm.taobao.org/babel-preset-react-app/download/babel-preset-react-app-6.1.0.tgz#477ae7f8557eb99ce26d179530127913b733310d"
-=======
   resolved "http://r.cnpmjs.org/babel-preset-react-app/download/babel-preset-react-app-6.1.0.tgz#477ae7f8557eb99ce26d179530127913b733310d"
->>>>>>> 849c5a2b806875b176a9d40bcbe265cbf6488f68
   integrity sha1-R3rn+FV+uZzibReVMBJ5E7czMQ0=
   dependencies:
     "@babel/core" "7.1.0"
@@ -2293,6 +2274,11 @@ caseless@~0.12.0:
   version "0.12.0"
   resolved "http://r.cnpmjs.org/caseless/download/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
   integrity sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=
+
+chain-function@^1.0.0:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/chain-function/download/chain-function-1.0.1.tgz#c63045e5b4b663fb86f1c6e186adaf1de402a1cc"
+  integrity sha1-xjBF5bS2Y/uG8cbhhq2vHeQCocw=
 
 chalk@2.4.1, chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.4.1:
   version "2.4.1"
@@ -2984,7 +2970,6 @@ css-what@2.1, css-what@^2.1.2:
 
 cssdb@^3.2.1:
   version "3.2.1"
-  resolved "http://registry.npm.taobao.org/cssdb/download/cssdb-3.2.1.tgz#65e7dc90be476ce5b6e567b19f3bd73a8c66bcb5"
   resolved "http://r.cnpmjs.org/cssdb/download/cssdb-3.2.1.tgz#65e7dc90be476ce5b6e567b19f3bd73a8c66bcb5"
   integrity sha1-ZefckL5HbOW25WexnzvXOoxmvLU=
 
@@ -3384,6 +3369,13 @@ dom-converter@~0.2:
   dependencies:
     utila "~0.4"
 
+dom-helpers@^3.2.0:
+  version "3.4.0"
+  resolved "http://registry.npm.taobao.org/dom-helpers/download/dom-helpers-3.4.0.tgz#e9b369700f959f62ecde5a6babde4bccd9169af8"
+  integrity sha1-6bNpcA+Vn2Ls3lprq95LzNkWmvg=
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+
 dom-serializer@0:
   version "0.1.0"
   resolved "http://r.cnpmjs.org/dom-serializer/download/dom-serializer-0.1.0.tgz#073c697546ce0780ce23be4a28e293e40bc30c82"
@@ -3645,7 +3637,6 @@ escodegen@^1.11.0, escodegen@^1.9.1:
 
 eslint-config-react-app@^3.0.5:
   version "3.0.6"
-  resolved "http://registry.npm.taobao.org/eslint-config-react-app/download/eslint-config-react-app-3.0.6.tgz#addcae1359235941e95f3c96970b7ac8552e1130"
   resolved "http://r.cnpmjs.org/eslint-config-react-app/download/eslint-config-react-app-3.0.6.tgz#addcae1359235941e95f3c96970b7ac8552e1130"
   integrity sha1-rdyuE1kjWUHpXzyWlwt6yFUuETA=
   dependencies:
@@ -7663,7 +7654,6 @@ object.pick@^1.3.0:
 
 object.values@^1.0.4:
   version "1.1.0"
-  resolved "http://registry.npm.taobao.org/object.values/download/object.values-1.1.0.tgz#bf6810ef5da3e5325790eaaa2be213ea84624da9"
   resolved "http://r.cnpmjs.org/object.values/download/object.values-1.1.0.tgz#bf6810ef5da3e5325790eaaa2be213ea84624da9"
   integrity sha1-v2gQ712j5TJXkOqqK+IT6oRiTak=
   dependencies:
@@ -8216,18 +8206,13 @@ postcss-convert-values@^4.0.1:
 
 postcss-custom-media@^7.0.4:
   version "7.0.7"
-<<<<<<< HEAD
-  resolved "http://registry.npm.taobao.org/postcss-custom-media/download/postcss-custom-media-7.0.7.tgz#bbc698ed3089ded61aad0f5bfb1fb48bf6969e73"
-=======
   resolved "http://r.cnpmjs.org/postcss-custom-media/download/postcss-custom-media-7.0.7.tgz#bbc698ed3089ded61aad0f5bfb1fb48bf6969e73"
->>>>>>> 849c5a2b806875b176a9d40bcbe265cbf6488f68
   integrity sha1-u8aY7TCJ3tYarQ9b+x+0i/aWnnM=
   dependencies:
     postcss "^7.0.5"
 
 postcss-custom-properties@^8.0.5:
   version "8.0.9"
-  resolved "http://registry.npm.taobao.org/postcss-custom-properties/download/postcss-custom-properties-8.0.9.tgz#8943870528a6eae4c8e8d285b6ccc9fd1f97e69c"
   resolved "http://r.cnpmjs.org/postcss-custom-properties/download/postcss-custom-properties-8.0.9.tgz#8943870528a6eae4c8e8d285b6ccc9fd1f97e69c"
   integrity sha1-iUOHBSim6uTI6NKFtszJ/R+X5pw=
   dependencies:
@@ -8592,7 +8577,6 @@ postcss-place@^4.0.1:
 
 postcss-preset-env@6.0.6:
   version "6.0.6"
-  resolved "http://registry.npm.taobao.org/postcss-preset-env/download/postcss-preset-env-6.0.6.tgz#f728b9a43bf01c24eb06efeeff59de0b31ee1105"
   resolved "http://r.cnpmjs.org/postcss-preset-env/download/postcss-preset-env-6.0.6.tgz#f728b9a43bf01c24eb06efeeff59de0b31ee1105"
   integrity sha1-9yi5pDvwHCTrBu/u/1neCzHuEQU=
   dependencies:
@@ -9163,13 +9147,16 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-addons-css-transition-group@^15.6.2:
+  version "15.6.2"
+  resolved "http://registry.npm.taobao.org/react-addons-css-transition-group/download/react-addons-css-transition-group-15.6.2.tgz#9e4376bcf40b5217d14ec68553081cee4b08a6d6"
+  integrity sha1-nkN2vPQLUhfRTsaFUwgc7ksIptY=
+  dependencies:
+    react-transition-group "^1.2.0"
+
 react-app-polyfill@^0.1.3:
   version "0.1.3"
-<<<<<<< HEAD
-  resolved "http://registry.npm.taobao.org/react-app-polyfill/download/react-app-polyfill-0.1.3.tgz#e57bb50f3751dac0e6b3ac27673812c68c679a1d"
-=======
   resolved "http://r.cnpmjs.org/react-app-polyfill/download/react-app-polyfill-0.1.3.tgz#e57bb50f3751dac0e6b3ac27673812c68c679a1d"
->>>>>>> 849c5a2b806875b176a9d40bcbe265cbf6488f68
   integrity sha1-5Xu1DzdR2sDms6wnZzgSxoxnmh0=
   dependencies:
     core-js "2.5.7"
@@ -9197,11 +9184,7 @@ react-app-rewired@^1.6.2:
 
 react-dev-utils@^6.1.1:
   version "6.1.1"
-<<<<<<< HEAD
-  resolved "http://registry.npm.taobao.org/react-dev-utils/download/react-dev-utils-6.1.1.tgz#a07e3e8923c4609d9f27e5af5207e3ca20724895"
-=======
   resolved "http://r.cnpmjs.org/react-dev-utils/download/react-dev-utils-6.1.1.tgz#a07e3e8923c4609d9f27e5af5207e3ca20724895"
->>>>>>> 849c5a2b806875b176a9d40bcbe265cbf6488f68
   integrity sha1-oH4+iSPEYJ2fJ+WvUgfjyiBySJU=
   dependencies:
     "@babel/code-frame" "7.0.0"
@@ -9241,11 +9224,7 @@ react-dom@^16.7.0:
 
 react-error-overlay@^5.1.0:
   version "5.1.1"
-<<<<<<< HEAD
-  resolved "http://registry.npm.taobao.org/react-error-overlay/download/react-error-overlay-5.1.1.tgz#56f0439f001ff3588da0f479a86482ccb1e708cb"
-=======
   resolved "http://r.cnpmjs.org/react-error-overlay/download/react-error-overlay-5.1.1.tgz#56f0439f001ff3588da0f479a86482ccb1e708cb"
->>>>>>> 849c5a2b806875b176a9d40bcbe265cbf6488f68
   integrity sha1-VvBDnwAf81iNoPR5qGSCzLHnCMs=
 
 react-is@^16.3.2, react-is@^16.6.3:
@@ -9366,6 +9345,17 @@ react-sticky@^6.0.3:
   dependencies:
     prop-types "^15.5.8"
     raf "^3.3.0"
+
+react-transition-group@^1.2.0:
+  version "1.2.1"
+  resolved "http://registry.npm.taobao.org/react-transition-group/download/react-transition-group-1.2.1.tgz#e11f72b257f921b213229a774df46612346c7ca6"
+  integrity sha1-4R9yslf5IbITIpp3TfRmEjRsfKY=
+  dependencies:
+    chain-function "^1.0.0"
+    dom-helpers "^3.2.0"
+    loose-envify "^1.3.1"
+    prop-types "^15.5.6"
+    warning "^3.0.0"
 
 react-tween-state@^0.1.5:
   version "0.1.5"
@@ -9855,7 +9845,6 @@ rgba-regex@^1.0.0:
 
 rimraf@2, rimraf@^2.2.8, rimraf@^2.5.2, rimraf@^2.5.4, rimraf@^2.6.1, rimraf@^2.6.2, rimraf@~2.6.2:
   version "2.6.3"
-  resolved "http://registry.npm.taobao.org/rimraf/download/rimraf-2.6.3.tgz#b2d104fe0d8fb27cf9e0a1cda8262dd3833c6cab"
   resolved "http://r.cnpmjs.org/rimraf/download/rimraf-2.6.3.tgz#b2d104fe0d8fb27cf9e0a1cda8262dd3833c6cab"
   integrity sha1-stEE/g2Psnz54KHNqCYt04M8bKs=
   dependencies:
