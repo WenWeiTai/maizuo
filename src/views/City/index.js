@@ -1,12 +1,41 @@
 import React, { Fragment,Component } from 'react'
 import './index.less'
 import http from '../../rxdserver';
+import store from '@/store';
 class index extends Component {
   constructor(props){
     super(props);
     this.state={
-      List:[]
+      hotCity:['北京','上海','广州','深圳','武汉','天津','西安','南京','杭州','成都','重庆'],
+      List:[],
+      CurCity:store.getState().city.curCity
     }
+    // 监听仓库当期状态
+    this.unsubscribe = store.subscribe(() => {
+      this.setState({
+        CurCity:store.getState().city.curCity
+      })
+    })
+  }
+  getTodo (data) {
+    store.dispatch({
+      type:'SET_CURCITY',
+      name:data
+    })
+    this.props.history.goBack()
+    //console.log('点击了div',data)
+  }
+  getTodos (i) {
+    store.dispatch({
+      type:'SET_CURCITY',
+      name:i
+    })
+    this.props.history.goBack()
+   // console.log('点击了li',i)
+  }
+  // 组件销毁取消监听
+  componentWillUnmount () {
+    this.unsubscribe()
   }
   //请求城市数据
   async getStudentList(){
@@ -41,7 +70,7 @@ class index extends Component {
       }
     })
     this.setState({List: last})
-    console.log(this.state.List)
+    // console.log(this.state.List)
   }
   componentDidMount(){
     this.getStudentList()
@@ -52,7 +81,7 @@ class index extends Component {
         <section>
           <div className="locate">定位城市</div>
           <div className="city-list">
-            <div className="location-city">定位失败，请点击重试</div>
+            <div className="location-city">{ this.state.CurCity }</div>
           </div>
         </section>
         <div className="history-city-list">
@@ -66,17 +95,13 @@ class index extends Component {
         <div className="hotcity">
           <div className="hot">热门城市</div>
           <div className="city-list-inline">
-            <div className="city-item">上海</div>
-            <div className="city-item">北京</div>
-            <div className="city-item">广州</div>
-            <div className="city-item">深圳</div>
-            <div className="city-item">武汉</div>
-            <div className="city-item">天津</div>
-            <div className="city-item">西安</div>
-            <div className="city-item">南京</div>
-            <div className="city-item">杭州</div>
-            <div className="city-item">成都</div>
-            <div className="city-item">重庆</div>
+          {
+            this.state.hotCity.map((item,index)=>{
+              return (
+                <div className="city-item" key={index} onClick={this.getTodo.bind(this,item)}>{item}</div>
+              )
+            })
+          }
           </div>
         </div>
         <div className="city-title">
@@ -89,7 +114,7 @@ class index extends Component {
                       {
                         item.value.map((result,indexs)=>{
                           return(
-                            <li key={indexs}>{result.nm}</li>
+                            <li key={indexs} onClick={this.getTodos.bind(this,result.nm)}>{result.nm}</li>
                           )
                         })
                       }
