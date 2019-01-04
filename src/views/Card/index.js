@@ -5,13 +5,27 @@ import './index.less';
 import store from '@/store'
 
 class Card extends Component {
+  constructor () {
+    super ()
+    this.state = {
+      dataArr: ''
+    }
+  }
   componentWillMount () {
     // 获取仓库的islogin，false为未登录，ture为登录
     console.log(store.getState().isLogin.islogin)
     if (!store.getState().isLogin.islogin) {
       this.props.history.replace('/login')
     }
+
+    let arr = store.getState().shopCard;
+    console.log(arr);
+    this.setState({
+      dataArr: arr
+    })
   }
+
+
 
   render() {
     return (
@@ -26,24 +40,23 @@ class Card extends Component {
                 <span className="price">单价</span>
                 <span className="change-film-num">数量</span>
               </li>
-              <li>
-                <span className="filmname">海王</span>
-                <span className="price">￥<i>100</i></span>
-                <span className="change-film-num">
-                  <i className="reduce-film">-</i>
-                  <span className="film-num">1</span>
-                  <i className="add-film">+</i>
-                </span>
-              </li>
-              <li>
-                <span className="filmname">海王</span>
-                <span className="price">￥<i>100</i></span>
-                <span className="change-film-num">
-                  <i className="reduce-film">-</i>
-                  <span className="film-num">1</span>
-                  <i className="add-film">+</i>
-                </span>
-              </li>
+              {
+                this.state.dataArr.map( (item, index) => {
+                  return (
+                  <li key={index}>
+                    <span className="filmname">{item.name}</span>
+                    <span className="price">￥<i>{item.price}</i></span>
+                    <span className="change-film-num">
+                      <i className="reduce-film">-</i>
+                      <span className="film-num">{item.num}</span>
+                      <i className="add-film">+</i>
+                    </span>
+                  </li>
+                  )
+                })
+              }
+
+
             </ul>
             <div className="buy">
               <p>合计：<i>0</i>元</p>
