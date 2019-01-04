@@ -11,8 +11,6 @@ import Login from './views/User';
 import Register from './views/register/index.js';
 import Home from './views/Home';
 
-import "animate.css";
-
 class App extends React.Component {
 
   // 百度定位当前城市
