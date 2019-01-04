@@ -1,6 +1,7 @@
 import React, { Fragment,Component } from 'react'
 import './index.less'
 import http from '../../rxdserver';
+import { Toast } from 'antd-mobile'
 import store from '@/store';
 class index extends Component {
   constructor(props){
@@ -25,6 +26,9 @@ class index extends Component {
     this.props.history.goBack()
     //console.log('点击了div',data)
   }
+  CitytipS() {
+    Toast.loading('Loading',1.5)
+  }
   getTodos (i) {
     store.dispatch({
       type:'SET_CURCITY',
@@ -36,6 +40,9 @@ class index extends Component {
   // 组件销毁取消监听
   componentWillUnmount () {
     this.unsubscribe()
+  }
+  componentWillMount () {
+    this.CitytipS()
   }
   //请求城市数据
   async getStudentList(){
