@@ -50,6 +50,7 @@
         .iconhead{
           width: 15px;
           height: 15px;
+          line-height: 15px;
           margin-right: 6px;
         }
         .search-ipt{
@@ -62,12 +63,20 @@
           outline: none;
           width: calc(100% - 40px);
         }
-        .iconfoot{
-          width: 15px;
-          height: 15px;
-          background: rgba(104, 102, 102,0.6);
-          border-radius: 50%;
+        .icon-rex{
+          width: 30px;
+          height: 30px;
+          text-align: center;
+          line-height: 30px;
+          .iconfoot{
+            line-height: 15px;
+            width: 15px;
+            height: 15px;
+            background: rgba(104, 102, 102,0.6);
+            border-radius: 50%;
+          }
         }
+        
       }
       .cancel{
         height: 30px;
@@ -95,6 +104,7 @@
       }
   }
   .search-result{
+    display: block;
     height: 100%;
     overflow: hidden;
     margin-bottom: 10px;
@@ -106,6 +116,7 @@
     }
     .list{
       padding-left: 15px;
+      display: block;
       border-top: 1px solid #e6e6e6;
       border-bottom: 1px solid #e6e6e6;
       .movie{
@@ -148,19 +159,26 @@
               margin-right: 48px;
               min-height: 27px;
               .ename{
+                width: 210px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
                 font-size: 13px;
                 color: #666;
                 margin-top: 2px;
+                padding-bottom: 5px;
               }
               .catogary{
                 font-size: 13px;
                 color: #666;
                 margin-top: 2px;
+                padding-bottom: 7px;
               }
               .release{
                 font-size: 13px;
                 color: #666;
                 margin-top: 2px;
+                padding-bottom: 5px;
               }
             }
             .wantlock{
@@ -192,5 +210,8 @@
       height: 44px;
       font-size: 15px;
     }
+  }
+  .haha{
+    display: none;
   }
 }
