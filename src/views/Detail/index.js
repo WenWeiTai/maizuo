@@ -80,7 +80,7 @@ export default class Zk_Details extends Component {
             </div>
           </section>
           <section className=" zk_section-seperate section-expander}" data-reactid=".4uvxkaf2ra.4.1">
-            <a href="/cinema/movie/1240159?_v_=yes" className="zk_btn-block" data-event="pay" data-reactid=".4uvxkaf2ra.4.1.0">
+            <a href="#/card" className="zk_btn-block" data-event="pay" data-reactid=".4uvxkaf2ra.4.1.0">
               <span data-reactid=".4uvxkaf2ra.4.1.0.1">特惠购票</span>
             </a>
             <div data-event="intro" data-bid="b_y93QJ" data-view-bid="b_y93L0" data-lab="{movie_id:1240159}" className="zk_text-expander text-expander-disable-false text-expander-expand-false" data-reactid=".4uvxkaf2ra.4.1.2" data-view-sended="1">

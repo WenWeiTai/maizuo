@@ -8,7 +8,9 @@ class Card extends Component {
   constructor () {
     super ()
     this.state = {
-      dataArr: localStorage.getItem('shopCard') ? JSON.parse(localStorage.getItem('shopCard')) : []
+      dataArr: localStorage.getItem('shopCard') ? JSON.parse(localStorage.getItem('shopCard')) : [],
+      total: 0,
+      num: 0
     }
 
     // 监听仓库更新
@@ -91,8 +93,7 @@ class Card extends Component {
               }
             </ul>
             <div className="buy">
-              <p>合计：<i>0</i>元</p>
-              <p>结算</p>
+              <p>合计：<i>{ this.state.total }</i>元</p>
             </div>
           </div>
         </div>
