@@ -3,7 +3,6 @@ import './index.less';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import CinemaList from '@/components/CinemaList/index.js'
-// import http from '../../rxdserver.js';
 
 class front extends Component {
     constructor(props) {
@@ -24,15 +23,16 @@ class front extends Component {
     }
     hideImg() {
         console.log(this.refs);
-        // this.setState({
-        //     bool: !this.state.bool
-        // })
-        // if(this.state.bool === true) {
-        //     this.refs.true.style.display="none"
-        // } else {
-        //     this.refs.true.style.display=""
-        // }
-
+        this.setState({
+            bool: !this.state.bool
+        })
+        if(this.state.bool === true) {
+            this.refs.detail.style.display="none"
+            this.refs.center.classList.add('center')
+        } else {
+            this.refs.detail.style.display=""
+            this.refs.center.classList.remove('center')
+        }
     }
     componentDidMount() {
         axios.get('./ss-detail/cinema.json').then((res) => {
@@ -66,7 +66,7 @@ class front extends Component {
             </header>
         {/* detail */}
         <Link to={`/detail?${this.state.id}`}>
-            <div className="detail box-flex" ref>
+            <div className="detail box-flex" ref="detail">
             <div className="poster">
                 <img alt="" src={this.state.newdata.img} />
             </div>
@@ -106,11 +106,70 @@ class front extends Component {
             </div>
         {/* nav-wrap */}
             <div className="nav-wrap filter-nav-wrap" onClick = {this.hideImg.bind(this)}>
-            <div className="tab mb-line-b">
-                    <div className="item" data-tab=".region">全城<span className="drop"></span></div>
-                    <div className="item" data-tab=".brand">品牌<span className="drop"></span></div>
-                    <div className="item" data-tab=".special">特色<span className="drop"></span></div>
-            </div>
+                <div className="tab mb-line-b">
+                        <div className="item" data-tab=".region">全城<span className="drop"></span></div>
+                        <div className="item" data-tab=".brand">品牌<span className="drop"></span></div>
+                        <div className="item" data-tab=".special">特色<span className="drop"></span></div>
+                </div>
+                {/* <div class="close-tab">
+                    <div class="tab-content">
+                        <div class="page special">
+                            <div id="special-content">
+                                    <div class="item-title">特色功能</div>
+                                    <div class="item-list">
+                                        <div class="item chosen" data-id="-1" data-type="service">全部</div>
+                                        <div class="item" data-id="4" data-type="service">会员卡</div>
+                                        <div class="item" data-id="3" data-type="service">可改签</div>
+                                        <div class="item" data-id="2" data-type="service">可退票</div>
+                                    </div>
+                                    <div class="item-title">特殊厅</div>
+                                    <div class="item-list">
+                                        <div class="item chosen" data-id="-1" data-type="hallType">全部</div>
+                                        <div class="item" data-id="2" data-type="hallType">IMAX厅</div>
+                                    </div>
+                            </div>
+                            <div id="special-btn">
+                                <span class="btn" id="cancel-btn">重置</span>
+                                <span class="btn" id="confirm-btn">确定</span>
+                            </div>
+                        </div>
+                        <div class="page brand">
+                            <div id="brand-content">
+                                    <div class="item brand-list chosen" data-id="-1" data-type="brand">
+                                        <span class="brand-name">全部</span>
+                                        <span class="brand-count">259</span>
+                                    </div>
+                                    <div class="item brand-list" data-id="1079568" data-type="brand">
+                                        <span class="brand-name">金逸影城</span>
+                                        <span class="brand-count">8</span>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="page region">
+                                <div id="region-tab">
+                                    <ul class="tab">
+                                        <li class="item chosen" data-type="region" data-subnav="#district">商区</li>
+                                        <li class="item" data-type="region" data-subnav="#subway">地铁站</li>
+                                    </ul>
+                                </div>
+                                <div id="region-list">
+                                    <div id="region-sidenav">
+                                        <div id="district">
+                                            <div class="district-li item chosen" data-type="district" data-id="-1">全部(259)</div>
+                                            <div class="district-li item" data-type="district" data-id="32">宝安区(79)</div>
+                                        </div>
+                                        <div id="subway">
+                                            <div class="district-li item chosen" data-type="line" data-id="-1">全部(259)</div>
+                                            <div class="district-li item" data-type="line" data-id="150">7号线(38)</div>
+                                        </div>
+                                    </div>
+                                    <div id="region-list-item"></div>
+                                    <div class="clearfix"></div>
+                                </div>
+                        </div>
+                    </div>
+                </div> */}
+                <div ref="center"></div>
             </div>
             <CinemaList></CinemaList>
         </div>
