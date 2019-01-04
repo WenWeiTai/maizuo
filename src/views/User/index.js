@@ -4,18 +4,23 @@ import './index.less';
 import { NavBar, Icon} from 'antd-mobile';
 // import { StickyContainer, Sticky } from 'react-sticky';
 import Usera from './Usera/inde';
-export default class User extends Component {
+class User extends Component {
+  constructor () {
+    super ()
+    this.goback = this.goback.bind(this);
+  }
+
+  goback () {
+    this.props.history.goBack()
+  }
+
   render() {
     return (
       <div>
         <NavBar
           mode="light"
           icon={<Icon type="left" />}
-          onLeftClick={() => console.log('onLeftClick')}
-          // rightContent={[
-          //   <Icon key="0" type="search" style={{ marginRight: '16px' }} />,
-          //   <Icon key="1" type="ellipsis" />,
-          // ]}
+          onClick={this.goback}
         >猫眼电影</NavBar>
       <div>
       </div>
@@ -24,3 +29,5 @@ export default class User extends Component {
     )
   }
 }
+
+export default User;

@@ -37,6 +37,14 @@ class register extends Component {
         }
       }).then(res => {
         console.log(res)
+
+
+        if (res.data.code === 0) {
+          Toast.info(res.data.msg + '返回登录', 3);
+          this.props.history.replace('/login');
+        } else {
+          Toast.info(res.data.msg, 2);
+        }
       })
     }
   }
@@ -56,6 +64,7 @@ class register extends Component {
           <InputItem
             clear
             placeholder="请输入手机号"
+            type='phone'
             value={this.state.phone}
             onChange={this.changePhone}
           ></InputItem>
@@ -64,6 +73,7 @@ class register extends Component {
             placeholder="请输入密码"
             value1={this.state.code}
             onChange={this.changeCode}
+            type='password'
           ></InputItem>
         </List>
         <WhiteSpace />

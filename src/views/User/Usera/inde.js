@@ -1,9 +1,9 @@
 import { Tabs, WhiteSpace } from 'antd-mobile';
 import React, { Component } from 'react'
-import { List, InputItem, Button } from 'antd-mobile';
-// import { createForm } from 'rc-form';
+import { List, InputItem, Button, Toast } from 'antd-mobile';
 import './index.less';
 import Userb from './Userab';
+import axios from 'axios';
 
 export default class usera extends Component {
   constructor(props) {
@@ -12,9 +12,50 @@ export default class usera extends Component {
       tabs: [
         { title: '美团账号登录' },
         { title: '手机验证登录' }
-      ]
+      ],
+      phone: '',
+      code: ''
+    }
+    this.changePhone = this.changePhone.bind(this)
+    this.changeCode = this.changeCode.bind(this)
+    this.login = this.login.bind(this);
+  }
+
+  login () {
+    if (!this.state.phone || !this.state.code) {
+      Toast.info('请输入完整信息', 2);
+    } else {
+      // 登录成功
+      axios.post('http://10.36.140.90:4000/api/user/login',{
+        params: {
+          phone: this.state.phone,
+          code: this.state.code
+        }
+      }).then(res => {
+        console.log(res)
+
+
+        if (res.data.code === 0) {
+          Toast.info(res.data.msg, 3);
+          // this.props.history.replace('/login');
+        } else {
+          Toast.info(res.data.msg, 2);
+        }
+      })
     }
   }
+
+  changePhone (value) {
+    this.setState({
+      phone: value
+    })
+  }
+  changeCode (value) {
+    this.setState({
+      code: value
+    })
+  }
+
   render() {
     return (
       <div>
@@ -23,36 +64,34 @@ export default class usera extends Component {
           <div className="zk_userk" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff' }}>
             <List>
               <InputItem
-                // {...getFieldProps('autofocus')}
                 clear
                 placeholder="账户名/手机号/Email"
-                ref={el => this.autoFocusInst = el}
+                type='phone'
+                value={this.state.phone}
+                onChange={this.changePhone}
               ></InputItem>
               <InputItem
-                // {...getFieldProps('autofocus')}
                 clear
                 placeholder="请输入您的密码"
-                ref={el => this.autoFocusInst = el}
+                type='password'
+                value1={this.state.code}
+                onChange={this.changeCode}
               ></InputItem>
-              <Button type="warning" disabled>登录</Button><WhiteSpace />
+              <Button type="warning" onClick={this.login}>登录</Button><WhiteSpace />
             </List>
             <Userb></Userb>
           </div>
           <div className="zk_userk" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff' }}>
             <List>
               <InputItem
-                // {...getFieldProps('autofocus')}
                 clear
                 placeholder="手机号"
-                ref={el => this.autoFocusInst = el}
               ></InputItem>
               <InputItem
-                // {...getFieldProps('autofocus')}
                 clear
                 placeholder="请输入您的密码"
-                ref={el => this.autoFocusInst = el}
               ></InputItem>
-              <Button type="warning" disabled>登录</Button><WhiteSpace />
+              <Button type="warning">登录</Button><WhiteSpace />
             </List>
             <Userb></Userb>
           </div>
@@ -62,5 +101,3 @@ export default class usera extends Component {
     )
   }
 }
-
-
