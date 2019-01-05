@@ -46,8 +46,8 @@ class LyjHome extends React.Component{
 
 
   getFilmName() {
-    // axios.get('http://10.36.140.90:4000/api/film/list',{
-   axios.get('http://192.168.1.113:4000/api/film/list',{
+    axios.get('http://10.36.140.90:4000/api/film/list',{
+  //  axios.get('http://192.168.1.113:4000/api/film/list',{
      params: {
        pageNum: this.state.pageNum,
        pageSize: this.state.pageSize
