@@ -58,7 +58,7 @@ class SoonPlaying extends React.Component{
       if(result.code===0) {
         this.setState({
           // 应该是result.data.list,如果是result.data,就会报上面的错
-          filmData: result.data.list
+          filmData: result.data.list.
         })
       }
       // console.log(this.state.filmData);
@@ -90,7 +90,7 @@ class SoonPlaying extends React.Component{
       {
         this.state.filmSoon.map((item,index) => {
             return (
-              <Link to='/front?' key={index}>
+              <Link to=" " key={index}>
               <p className="comingTitle">{item.comingTitle}</p>
               <div className='ljy-List'>
               <img src={item.img} alt="" />

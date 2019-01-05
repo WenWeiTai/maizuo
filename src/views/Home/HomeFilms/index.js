@@ -7,6 +7,8 @@ import CityFilms from '@/components/CityFilms';
 import { Tabs, WhiteSpace } from 'antd-mobile';
 import axios from 'axios';
 import store from '@/store';
+import { Toast } from 'antd-mobile';
+
 
 
 class LyjHome extends React.Component{
@@ -46,8 +48,8 @@ class LyjHome extends React.Component{
 
 
   getFilmName() {
+    Toast.loading('加载中..',0.5);
     axios.get('http://10.36.140.90:4000/api/film/list',{
-  //  axios.get('http://192.168.1.113:4000/api/film/list',{
      params: {
        pageNum: this.state.pageNum,
        pageSize: this.state.pageSize
