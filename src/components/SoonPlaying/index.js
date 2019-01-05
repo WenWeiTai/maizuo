@@ -9,13 +9,46 @@ class SoonPlaying extends React.Component{
   constructor(props) {
     super(props);
     this.state= {
-      filmData:[]
+      filmData:[],
+      pageNum: 1,    //当前页码
+      pageSize: 5,   //当前页数
+      totalPage: 0,  //总页数
+      filmSoon:[],      //电影数据
+
     }
   }
 
-  // 组件创建
+  // 电影数据请求方法
+  getFilmNameSoon() {
+    axios.get('./b.json').then(res =>{
+     let result = res.data;
+     if(result.code === 0 ) {
+
+          this.setState(() => ({
+            // 原数组保存，和追加(concat：数组方法)
+            filmSoon: result.data.list
+          }))
+
+    } else {
+     alert(result.msg);
+   }
+  //  console.log(this.state.filmSoon);
+ })
+}
+
+  // 点击加载更多
+  // loadMore() {
+  //   // 当前页码小于总页数,就对当前页码加 1
+  //   if(this.state.pageNum < this.state.totalPage){
+  //       this.state.pageNum++;
+  //       this.getFilmName();//点击加载更多，调用ajax请求
+  //   }
+  // }
+
+  // 组件创建方法调用
   componentDidMount() {
     this.addPreview();
+    this.getFilmNameSoon();
   }
 
 // 加载横向的电影
@@ -55,9 +88,10 @@ class SoonPlaying extends React.Component{
       <div className="borderBox1"></div>
       <div className="lyj-cityListSon">
       {
-        this.props.films.map((item,index) => {
+        this.state.filmSoon.map((item,index) => {
             return (
               <Link to='/front?' key={index}>
+              <p className="comingTitle">{item.comingTitle}</p>
               <div className='ljy-List'>
               <img src={item.img} alt="" />
               <div className='lyj-filmsDetails'>
@@ -71,14 +105,14 @@ class SoonPlaying extends React.Component{
                   </div>
                 </div>
 
-                <p className="p1">观众评<span>{item.sc}</span></p>
+                <p className="p1"><span>{item.wish}</span> 人想看</p>
                 <p className="p2">{`主演 : ${item.star}`}</p>
-                <p className="p3">{item.showInfo}</p>
+                <p className="p3">{`${item.rt} 上映`}</p>
 
                 </div>
 
                 <div className='lyj-gouPiao'>
-                  <div className="gouPiao" onClick={this.onChange}>购票</div>
+                  <div className="gouPiao1" onClick={this.onChange}>预购</div>
                 </div>
               </div>
 
