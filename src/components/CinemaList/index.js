@@ -13,7 +13,6 @@ class front extends Component {
     }
     SeAe = (sea) => {
         let searc = [];
-        console.log(sea)
         searc = this.state.superdataColo.filter(item => {
             return item.nm.indexOf(sea) > -1;
         })
