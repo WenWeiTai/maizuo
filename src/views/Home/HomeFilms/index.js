@@ -87,10 +87,7 @@ class LyjHome extends React.Component{
     if(this.state.pageNum < this.state.totalPage){
         this.state.pageNum++;
         this.getFilmName();//点击加载更多，调用ajax请求
-
     }
-
-
   }
 
   render() {
