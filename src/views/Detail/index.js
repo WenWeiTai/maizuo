@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './index.less'
 import axios from 'axios'
 import { Link } from 'react-router-dom';
+import { Toast, WhiteSpace, WingBlank, Button } from 'antd-mobile';
 
 export default class Zk_Details extends Component {
   constructor(props) {
@@ -13,17 +14,19 @@ export default class Zk_Details extends Component {
 
   componentWillMount() {
     let Idd=this.props.location.search.split('?')[1]
+    Toast.loading('加载中',1)
     axios.get('http://10.36.140.90:4000/api/filmid/id',{
       params: {
         id:Idd
       }
     }).then((response) => {
-      console.log(response.data.data[0]);
+      // console.log(response.data.data[0]);/
       this.setState({
         zk_xq:response.data.data[0]
       })
       // this.setState.zk_xq = response.data.detailMovie.nm;
       // console.log(this.state.zk_xq)
+      // Toast.hide()
     })
   }
   goback=()=>{
@@ -108,64 +111,64 @@ export default class Zk_Details extends Component {
             <ul className="zk_movie-celebrities">
               <li>
                 <a href="1" className="zk_link">
-                  <img src="//p0.meituan.net/moviemachine/fa92882745cfc214b1fcbd2062d639dc34054.jpg@130w_180h.webp" alt="" />
-                  <span>马丽</span>
+                  <img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/cefba5ab52c4e633a66a39e78468b8f037d7c0ab3f875dbd837233361b609178c2fee3ff7fad12e4270188c20c6676fa?pictype=scale&from=30113&version=3.3.3.3&uin=502374689&fname=3FA47E1A1E6AE9D32804417E576AD90D.jpg&size=750" alt="" />
+                  <span>老温</span>
                   <span>韩笑</span>
                 </a>
               </li>
               <li>
                 <a href="1" className="zk_link">
-                  <img src="//p0.meituan.net/moviemachine/fa92882745cfc214b1fcbd2062d639dc34054.jpg@130w_180h.webp" alt="" />
-                  <span>马丽</span>
+                  <img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/cefba5ab52c4e633a66a39e78468b8f037d7c0ab3f875dbd837233361b609178c2fee3ff7fad12e4270188c20c6676fa?pictype=scale&from=30113&version=3.3.3.3&uin=502374689&fname=3FA47E1A1E6AE9D32804417E576AD90D.jpg&size=750" alt="" />
+                  <span>老温</span>
                   <span>韩笑</span>
                 </a>
               </li>
               <li>
                 <a href="1" className="zk_link">
-                  <img src="//p0.meituan.net/moviemachine/fa92882745cfc214b1fcbd2062d639dc34054.jpg@130w_180h.webp" alt="" />
-                  <span>马丽</span>
+                  <img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/cefba5ab52c4e633a66a39e78468b8f037d7c0ab3f875dbd837233361b609178c2fee3ff7fad12e4270188c20c6676fa?pictype=scale&from=30113&version=3.3.3.3&uin=502374689&fname=3FA47E1A1E6AE9D32804417E576AD90D.jpg&size=750" alt="" />
+                  <span>老温</span>
                   <span>韩笑</span>
                 </a>
               </li>
               <li>
                 <a href="1" className="zk_link">
-                  <img src="//p0.meituan.net/moviemachine/fa92882745cfc214b1fcbd2062d639dc34054.jpg@130w_180h.webp" alt="" />
-                  <span>马丽</span>
+                  <img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/cefba5ab52c4e633a66a39e78468b8f037d7c0ab3f875dbd837233361b609178c2fee3ff7fad12e4270188c20c6676fa?pictype=scale&from=30113&version=3.3.3.3&uin=502374689&fname=3FA47E1A1E6AE9D32804417E576AD90D.jpg&size=750" alt="" />
+                  <span>老温</span>
                   <span>韩笑</span>
                 </a>
               </li>
               <li>
                 <a href="1" className="zk_link">
-                  <img src="//p0.meituan.net/moviemachine/fa92882745cfc214b1fcbd2062d639dc34054.jpg@130w_180h.webp" alt="" />
-                  <span>马丽</span>
+                  <img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/cefba5ab52c4e633a66a39e78468b8f037d7c0ab3f875dbd837233361b609178c2fee3ff7fad12e4270188c20c6676fa?pictype=scale&from=30113&version=3.3.3.3&uin=502374689&fname=3FA47E1A1E6AE9D32804417E576AD90D.jpg&size=750" alt="" />
+                  <span>老温</span>
                   <span>韩笑</span>
                 </a>
               </li>
               <li>
                 <a href="1" className="zk_link">
-                  <img src="//p0.meituan.net/moviemachine/fa92882745cfc214b1fcbd2062d639dc34054.jpg@130w_180h.webp" alt="" />
-                  <span>马丽</span>
+                  <img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/cefba5ab52c4e633a66a39e78468b8f037d7c0ab3f875dbd837233361b609178c2fee3ff7fad12e4270188c20c6676fa?pictype=scale&from=30113&version=3.3.3.3&uin=502374689&fname=3FA47E1A1E6AE9D32804417E576AD90D.jpg&size=750" alt="" />
+                  <span>老温</span>
                   <span>韩笑</span>
                 </a>
               </li>
               <li>
                 <a href="1" className="zk_link">
-                  <img src="//p0.meituan.net/moviemachine/fa92882745cfc214b1fcbd2062d639dc34054.jpg@130w_180h.webp" alt="" />
-                  <span>马丽</span>
+                  <img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/cefba5ab52c4e633a66a39e78468b8f037d7c0ab3f875dbd837233361b609178c2fee3ff7fad12e4270188c20c6676fa?pictype=scale&from=30113&version=3.3.3.3&uin=502374689&fname=3FA47E1A1E6AE9D32804417E576AD90D.jpg&size=750" alt="" />
+                  <span>老温</span>
                   <span>韩笑</span>
                 </a>
               </li>
               <li>
                 <a href="1" className="zk_link">
-                  <img src="//p0.meituan.net/moviemachine/fa92882745cfc214b1fcbd2062d639dc34054.jpg@130w_180h.webp" alt="" />
-                  <span>马丽</span>
+                  <img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/cefba5ab52c4e633a66a39e78468b8f037d7c0ab3f875dbd837233361b609178c2fee3ff7fad12e4270188c20c6676fa?pictype=scale&from=30113&version=3.3.3.3&uin=502374689&fname=3FA47E1A1E6AE9D32804417E576AD90D.jpg&size=750" alt="" />
+                  <span>老温</span>
                   <span>韩笑</span>
                 </a>
               </li>
               <li>
                 <a href="1" className="zk_link">
-                  <img src="//p0.meituan.net/moviemachine/fa92882745cfc214b1fcbd2062d639dc34054.jpg@130w_180h.webp" alt="" />
-                  <span>马丽</span>
+                  <img src="http://img0.imgtn.bdimg.com/it/u=3539825298,2957623822&fm=26&gp=0.jpg" alt="" />
+                  <span>老温</span>
                   <span>韩笑</span>
                 </a>
               </li>

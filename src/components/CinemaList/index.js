@@ -24,6 +24,10 @@ class front extends Component {
     componentWillReceiveProps(nextProps) {
         if(nextProps.sea) {
             this.SeAe(nextProps.sea);
+        } else {
+            this.setState({
+                superdata: this.state.superdataColo
+            })
         }
     }
 
