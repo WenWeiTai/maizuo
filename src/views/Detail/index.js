@@ -15,7 +15,7 @@ export default class Zk_Details extends Component {
   componentWillMount() {
     let Idd=this.props.location.search.split('?')[1]
     Toast.loading('加载中',1)
-    axios.get('http://10.36.140.90:4000/api/filmid/id',{
+    axios.get('http://129.204.78.99:4000/api/filmid/id',{
       params: {
         id:Idd
       }

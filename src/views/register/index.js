@@ -30,7 +30,7 @@ class register extends Component {
     if (!this.state.phone || !this.state.code) {
       Toast.info('请输入完整再注册', 2);
     } else {
-      axios.post('http://10.36.140.90:4000/api/user/register',{
+      axios.post('http://129.204.78.99:4000/api/user/register',{
         params: {
           phone: this.state.phone,
           code: this.state.code

@@ -28,7 +28,7 @@ export default class usera extends Component {
     if (!this.state.phone || !this.state.code) {
       Toast.info('请输入完整信息', 2);
     } else {
-      axios.post('http://10.36.140.90:4000/api/user/login',{
+      axios.post('http://129.204.78.99:4000/api/user/login',{
         params: {
           phone: this.state.phone,
           code: this.state.code

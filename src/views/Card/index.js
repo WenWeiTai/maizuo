@@ -99,7 +99,7 @@ class Card extends Component {
         </div>
         <WhiteSpace size="lg" />
         <div className='price-block'>
-          <Button type="primary" onClick={()=>{this.props.history.goBack()}}>确定支付</Button>
+          <Button type="primary" onClick={()=>{this.props.history.push('/')}}>确定支付</Button>
         </div>
       </div>
     )

@@ -41,7 +41,7 @@ class front extends Component {
             // })
         });
         const newId = this.props.location.search.slice(1)
-        axios.get('http://10.36.140.90:4000/api/filmid/id',{
+        axios.get('http://129.204.78.99:4000/api/filmid/id',{
             params: {
               id: newId
             }
