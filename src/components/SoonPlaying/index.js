@@ -58,10 +58,9 @@ class SoonPlaying extends React.Component{
       if(result.code===0) {
         this.setState({
           // 应该是result.data.list,如果是result.data,就会报上面的错
-          filmData: result.data.list.
+          filmData: result.data.list
         })
       }
-      // console.log(this.state.filmData);
     })
   }
 
